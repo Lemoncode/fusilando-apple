@@ -1,0 +1,24 @@
+{
+	"name": "fusilando-apple",
+	"version": "1.0.0",
+	"description": "Examples use css",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "parcel ./src/index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Lemoncode/fusilando-apple.git"
+	},
+	"author": "Juan Pablo Martínez",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Lemoncode/fusilando-apple/issues"
+	},
+	"homepage": "https://github.com/Lemoncode/fusilando-apple#readme",
+	"devDependencies": {
+		"parcel": "^1.12.4",
+		"sass": "^1.32.7"
+	}
+}
