@@ -1,0 +1,9 @@
+@import "./_normalize.css";
+@import "./colors";
+@import "./fonts";
+
+// Delete this class
+.container {
+	border: 2px solid yellowgreen;
+	margin: 2% auto;
+}
