@@ -14,11 +14,15 @@ Los pasos que vamos a seguir son:
 
 ## 1. Instalación de dependencias.
 
+---
+
 En esta parte no vamos a pararnos mucho, es algo que se verá más adelante pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
 Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo.
 Como vamos a utilizar `Sass` como preprocesador css necesitaremos instalarlo y también algo que transpile el código para que el navegador lo entienda. De esto se encargará `Webpack`.
 
 ## 2. Creación de la estructura.
+
+---
 
 Una vez conocemos los requisitos y el diseño del proyecto podemos empezar a crear una estructura básica (la cual iremos ampliando) donde poder empezar a colocar y crear nuestros archivos y recursos necesarios.
 
@@ -49,11 +53,15 @@ Este proyecto está definido de la siguiente manera:
 
 ## 3. Recopilación de recursos
 
+---
+
 Tener todos los recursos que vamos a necesitar ya importados y listos en nuestro proyecto es algo que nos agilizará mucho en el desarrollo.
 En un caso real estos recursos los extraeríamos de nuestro diseño o en el mejor de los casos nos los proporcionaría el diseñador.
 Cuando hablo de recursos me refiero a imágenes, fuentes, vídeos, paleta de color, etc.
 
 ## 4. Definición html básico.
+
+---
 
 Personalmente me gusta crear una estructura básica de lo que será la página, con esto me refiero, por ejemplo, a añadir un header, un body y un footer inicial a los cuales añado un borde o un fondo para diferenciarlos y luego de la misma forma ir profundizando en cada uno de ellos. Esto no es algo estático ya que según vayamos añadiendo contenido en cada capa surgirán distintas necesidades para la colocación y distribución de los elementos.
 
@@ -73,6 +81,8 @@ La estructura básica inicial para esta página es la siguiente:
 ```
 
 ## 5. Creación de estilos globales
+
+---
 
 Este punto lo podemos afrontar de dos formas, una si utilizamos CSS y otra si utilizamos Sass.
 
@@ -185,4 +195,30 @@ $link: #06c;
 
 ## 6. Maquetación y estilado por bloques
 
+---
+
+> **_Esta sesión consiste en mostrar y reforzar el proceso de maquetación por lo que nos centraremos sólo en la vista. No vamos a añadir funcionalidad y comportamientos extra con JavaScript, tendremos que adaptarnos y plantear soluciones utilizando únicamente html y css._**
+
+Vamos ha empezar añadiendo el contenido y maquetando cada uno de los bloques de la web. Será una página responsiva por lo que utilizaremos el método llamado **"movile firsh"**, es decir iremos implementando el diseño desde las pantallas para móviles hasta llegar a las de escritorio.
+
+Al haber definido la estructura básica del proyecto ya tenemos preparados los distintos bloques a los cuales iremos añadiendo su contenido. Iremos completando cada uno de ellos, es decir, maquetaremos cada bloque en todas sus formas tratándolo de la manera más independiente posible y una vez terminado pasaremos al siguiente.
+
+> Trabajar de esta manera nos ayudará a centrarnos en resolver un problema concreto sin el ruido que nos pueda generar el resto de elementos.
+
+> Trabajar de manera aislada no significa que nos olvidemos del resto, siempre hay que tener una perspectiva general, por ejemplo, para identificar clases que puedan ser promocionadas a globales o quizás haya bloques que interactúen entre ellos.
+
+---
+
 ### 6.1 Top Menú
+
+---
+
+Vamos a empezar de arriba a abajo así que primero nos fijaremos en el diseño de nuestro menú y comenzando por la vista para móviles.
+
+**Vista Top Menu**
+
+![menú móvil](public/top-menu-movil.png)
+
+**Vista Top Menu desplegado**
+
+![menú móvil](public/top-menu-movil2.png)
