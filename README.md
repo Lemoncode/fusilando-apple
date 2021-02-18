@@ -61,15 +61,14 @@ La estructura básica inicial para esta página es la siguiente:
 
 ```html
 <body>
-      <nav class="container">Hello top menu</nav>
-      <div class="container">Hello container</div>
-      <section class="container">Hello section iPhone 12</section>
-      <section class="container">Hello section iPhone 12 pro</section>
-      <section class="container">Hello section iPad Air</section>
-      <section class="container">Hello section watch and more</section>
-      <section class="container">Hello section watch and more</section>
-      <footer class="container></footer>
-
+	<nav class="container">Hello top menu</nav>
+	<div class="container">Hello container</div>
+	<section class="container">Hello section iPhone 12</section>
+	<section class="container">Hello section iPhone 12 pro</section>
+	<section class="container">Hello section iPad Air</section>
+	<section class="container">Hello section watch and more</section>
+	<section class="container">Hello section watch and more</section>
+	<footer class="container"></footer>
 </body>
 ```
 
@@ -84,6 +83,8 @@ Este punto lo podemos afrontar de dos formas, una si utilizamos CSS y otra si ut
 Si optamos por usar CSS crearemos un archivo `_global.css` que tendrá las clases e Ids globales para títulos, párrafos, enlaces, etc... otro para las fuentes `_fonts.css` y uno principal llamado `styles.css` que será el que cargue el resto de CSSs y el cual será llamado en el **html**.
 
 Quedaría algo así:
+
+### CSS
 
 **\_fonts.css**
 
@@ -152,6 +153,8 @@ Nosotros vamos a trabajar con `Sass` y será de una manera similar a la anterior
 Más adelante iremos viendo las virtudes y la potencia de utilizar un preprocesador para nuestros estilos pero de momento nos centraremos en definir nuestras variables.
 
 Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y el cual será llamado en el **html**.
+
+### SASS
 
 **\_vars.scss**
 
