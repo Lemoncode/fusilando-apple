@@ -75,13 +75,13 @@ La estructura básica inicial para esta página es la siguiente:
 
 ## 5. Creación de estilos globales
 
-Este punto lo afrontaremos de dos formas, una si utilizamos CSS y otra si utilizamos Sass.
+Este punto lo podemos afrontar de dos formas, una si utilizamos CSS y otra si utilizamos Sass.
 
-> En cualquiera de los dos casos voy a añadir un `_normalize.css` que lo que hace es resetear los estilos que cada navegador implementa por defecto, de esta manera minimizamos las diferencias al mostrar la página en cada uno de ellos.
+> En cualquiera de los dos casos vamos a añadir un `_normalize.css` para resetear los estilos que cada navegador implementa por defecto, de esta manera minimizamos las diferencias al mostrar la página en cada uno de ellos.
 
 > _El guión bajo en el nombre lo utilizo para diferenciar los archivos con estilos globales o variables de los específicos de cada bloque o componente... a parte de por convención_ :-)
 
-Si optamos por usar CSS crearemos un archivo `_global.css` que tendrá las clases globales para títulos, párrafos, enlaces, etc... otro para las fuentes `_fonts.css` y uno principal llamado `styles.css` que será el que cargue el resto de CSSs y el cual será llamdo en el **html**.
+Si optamos por usar CSS crearemos un archivo `_global.css` que tendrá las clases e Ids globales para títulos, párrafos, enlaces, etc... otro para las fuentes `_fonts.css` y uno principal llamado `styles.css` que será el que cargue el resto de CSSs y el cual será llamado en el **html**.
 
 Quedaría algo así:
 
@@ -126,7 +126,7 @@ Quedaría algo así:
 @import './_fonts.css';
 
 .title {
-      font-family: 'SF Regular',
+      font-family: 'SF Pro Display Regular',
       color: #000,
       ....
 }
@@ -151,7 +151,7 @@ Nosotros vamos a trabajar con `Sass` y será de una manera similar a la anterior
 
 Más adelante iremos viendo las virtudes y la potencia de utilizar un preprocesador para nuestros estilos pero de momento nos centraremos en definir nuestras variables.
 
-Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto y el archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y el cual será llamado en el **html**.
+Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y el cual será llamado en el **html**.
 
 **\_vars.scss**
 
@@ -159,7 +159,7 @@ Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y 
 @import "./_fonts.css";
 
 //Fonts
-$title: "SF Regular";
+$title: "SF Pro Display Regular";
 
 //colors
 $primary: rgba(0, 0, 0, 0.92);
@@ -174,7 +174,7 @@ $link: #06c;
 
 ```scss
 @import "./_normalize.css";
-@import './_fonts.css';
+@import './_fonts.scss';
 @import './vars.scss';
 
 ...
