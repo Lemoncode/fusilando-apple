@@ -12,7 +12,7 @@
 	<body>
 		<nav class="container">
 			<ul class="menu">
-				<li class="item-menu item-open-menu">
+				<li id="toggle-button" class="item-menu item-open-menu">
 					<span class="menu-line-one">
 						<span></span>
 					</span>
@@ -551,4 +551,15 @@
 			</section>
         </footer>
 	</body>
+	<script>
+		document.querySelector("#toggle-button").addEventListener("click",  () => {
+
+			document.querySelector("#toggle-button").classList.toggle("item-close-menu")
+			document.querySelector(".menu").classList.toggle("collapsed");
+			document.querySelector(".menu-line-one").classList.toggle("menu-line-one-close");
+			document.querySelector(".menu-line-two").classList.toggle("menu-line-two-close");
+			document.querySelector(".icon-store").classList.toggle("icon-store-visibility");
+	
+		});
+	</script>
 </html>

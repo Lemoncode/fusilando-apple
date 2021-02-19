@@ -2,12 +2,13 @@
 
 .menu {
 	list-style: none;
-	background-color: $black;
-	color: $secondary;
+	background-color: $primary;
+	color: rgba($secondary, 0.9);
 	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
-	padding: 3%;
-	margin: 0;
+	padding: 3% 1%;
+	margin: -10px 0 0 0;
 	display: grid;
+	cursor: pointer;
 	grid-template-areas:
 		"menu apple store"
 		"search search search"
@@ -19,14 +20,19 @@
 		"item6 item6 item6"
 		"item7 item7 item7";
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr repeat(8, 0.5fr);
-	row-gap: 10px;
+	grid-template-rows: 0.5fr 1fr repeat(7, 0.5fr);
+	row-gap: 8px;
+	max-height: 55px;
+	overflow: hidden;
+	box-sizing: border-box;
+	transition: max-height 0.5s ease-out;
 
 	.item-menu {
 		width: 80%;
 		margin: 0 auto;
 		display: flex;
-		padding-bottom: 10px;
+		padding: 10px 0;
+		align-self: center;
 
 		.link-text {
 			position: absolute;
@@ -36,11 +42,11 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
-			height: 30px;
-			width: 30px;
+			height: 21px;
+			width: 21px;
 			margin: 0 auto;
 			display: block;
-			opacity: 0.7;
+			opacity: 0.8;
 
 			:hover {
 				opacity: 1;
@@ -54,23 +60,31 @@
 		align-self: center;
 		flex-flow: column;
 		opacity: 0.7;
+		cursor: pointer;
+		gap: 6px;
 
 		.menu-line-one {
 			height: 2px;
-			width: 28px;
+			width: 17px;
+			border-radius: 0.5px;
+			display: block;
 			background-color: $secondary;
-			transform: rotate(45deg);
 		}
 		.menu-line-two {
-			height: 2px;
-			width: 28px;
-			margin-top: -2px;
+			height: 1px;
+			width: 17px;
+			border-radius: 0.5px;
+			display: block;
 			background-color: $secondary;
-			transform: rotate(-45deg);
 		}
 	}
 	.item-apple {
 		grid-area: apple;
+	}
+	.icon-apple {
+		.link-icon {
+			background-image: url(../assets/icons/logo-apple.svg);
+		}
 	}
 	.item-mac {
 		grid-area: item1;
@@ -98,51 +112,48 @@
 	}
 	.item-support {
 		grid-area: item7;
-		border-bottom: 2px solid $textGreyDark;
 	}
 	.item-search {
 		grid-area: search;
 		border-bottom: 1px solid $textGreyDark;
 		width: 100%;
 	}
-	.item-store {
-		grid-area: store;
-	}
-
-	.icon-apple {
-		.link-icon {
-			background-image: url(../assets/icons/logo-apple.svg);
-		}
-	}
 	.icon-search {
+		padding: 5px 0 15px;
 		.input-container {
 			background-color: $textDark;
-			width: 95%;
+			width: 93%;
 			margin: 0 auto;
 			display: flex;
 			justify-content: space-between;
 			align-content: center;
 			flex-flow: row;
-			gap: 5%;
-			padding: 2%;
-			border-radius: 8px;
+			gap: 1%;
+			padding: 2% 1%;
+			border-radius: 6px;
 
 			.link-icon {
 				background-image: url(../assets/icons/search.svg);
-				width: 5%;
-				height: 20px;
-				width: 20px;
+				width: 3%;
+				height: 14px;
+				width: 14px;
+				align-self: center;
 			}
 			.input-search {
-				width: 90%;
+				width: 93%;
 				background-color: $textDark;
 				border: none;
 				outline: none;
-				color: $textGrey;
+				color: rgba($secondary, 0.7);
+				font-size: 17px;
+				line-height: 1.23536;
+				letter-spacing: -0.022em;
 			}
 		}
 	}
-
+	.item-store {
+		grid-area: store;
+	}
 	.icon-store {
 		display: flex;
 		.link-icon {
@@ -150,4 +161,30 @@
 			margin-right: 0;
 		}
 	}
+}
+
+//Collapse menu styles
+.collapsed {
+	background-color: $black;
+	padding-bottom: 100vh;
+	max-height: 100vh;
+	transition: all 0.5s ease-in;
+}
+
+.item-close-menu {
+	gap: 0;
+}
+.menu-line-one-close {
+	opacity: 0.8;
+	transform: rotate(45deg);
+}
+.menu-line-two-close {
+	opacity: 0.8;
+	height: 2px !important;
+	margin-top: -8px;
+	transform: rotate(-45deg);
+}
+
+.icon-store-visibility {
+	visibility: hidden;
 }
