@@ -10,8 +10,8 @@
 		
 	</head>
 	<body>
-		<nav class="container">
-			<ul class="menu">
+		<nav class="container top-menu-container">
+			<ul class="top-menu">
 				<li id="toggle-button" class="item-menu item-open-menu">
 					<span class="menu-line-one">
 						<span></span>
@@ -20,7 +20,7 @@
 						<span></span>
 					</span>	
 				</li>
-				<li class="item-menu item-apple icon-apple"><a href="#" class="link-icon"><span class="link-text">Apple</span></a></li>
+				<li class="item-menu item-apple"><a href="#" class="link-icon"><span class="link-text">Apple</span></a></li>
 				<li class="item-menu item-mac">Mac</li>
 				<li class="item-menu item-ipad">IPad</li>
 				<li class="item-menu item-iphone">IPhone</li>
@@ -28,9 +28,12 @@
 				<li class="item-menu item-tv">TV</li>
 				<li class="item-menu item-music">Music</li>
 				<li class="item-menu item-support">Soporte</li>
-				<li class="item-menu item-search icon-search">
+				<li class="item-menu item-search">
+					<a href="#" class="link-icon">
+						<span class="link-text">Buscar</span>
+					</a>
 					<div class="input-container">
-						<a href="#" class="link-icon">
+						<a href="#" class="link-icon-movile">
 							<span class="link-text">Buscar</span>
 						</a>
 						<input type="search" class="input-search" placeholder="Buscar en apple.com" />
@@ -555,7 +558,7 @@
 		document.querySelector("#toggle-button").addEventListener("click",  () => {
 
 			document.querySelector("#toggle-button").classList.toggle("item-close-menu")
-			document.querySelector(".menu").classList.toggle("collapsed");
+			document.querySelector(".top-menu-container").classList.toggle("collapsed");
 			document.querySelector(".menu-line-one").classList.toggle("menu-line-one-close");
 			document.querySelector(".menu-line-two").classList.toggle("menu-line-two-close");
 			document.querySelector(".icon-store").classList.toggle("icon-store-visibility");

@@ -1,8 +1,16 @@
 @import "./vars";
 
-.menu {
-	list-style: none;
+.top-menu-container {
 	background-color: $primary;
+	margin: 0 auto;
+	max-height: 50px;
+	overflow: hidden;
+	box-sizing: border-box;
+	transition: max-height 0.5s ease-out;
+}
+
+.top-menu {
+	list-style: none;
 	color: rgba($secondary, 0.9);
 	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
 	padding: 3% 1%;
@@ -22,10 +30,6 @@
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 0.5fr 1fr repeat(7, 0.5fr);
 	row-gap: 8px;
-	max-height: 55px;
-	overflow: hidden;
-	box-sizing: border-box;
-	transition: max-height 0.5s ease-out;
 
 	.item-menu {
 		width: 80%;
@@ -80,12 +84,11 @@
 	}
 	.item-apple {
 		grid-area: apple;
-	}
-	.icon-apple {
 		.link-icon {
 			background-image: url(../assets/icons/logo-apple.svg);
 		}
 	}
+
 	.item-mac {
 		grid-area: item1;
 		border-bottom: 2px solid $textGreyDark;
@@ -117,9 +120,12 @@
 		grid-area: search;
 		border-bottom: 1px solid $textGreyDark;
 		width: 100%;
-	}
-	.icon-search {
 		padding: 5px 0 15px;
+
+		.link-icon {
+			display: none;
+		}
+
 		.input-container {
 			background-color: $textDark;
 			width: 93%;
@@ -129,10 +135,10 @@
 			align-content: center;
 			flex-flow: row;
 			gap: 1%;
-			padding: 2% 1%;
+			padding: 2%;
 			border-radius: 6px;
 
-			.link-icon {
+			.link-icon-movile {
 				background-image: url(../assets/icons/search.svg);
 				width: 3%;
 				height: 14px;
@@ -151,26 +157,62 @@
 			}
 		}
 	}
+
 	.item-store {
 		grid-area: store;
-	}
-	.icon-store {
 		display: flex;
 		.link-icon {
 			background-image: url(../assets/icons/bag.svg);
 			margin-right: 0;
 		}
 	}
+
+	@media (min-width: 760px) {
+		display: flex;
+		flex-flow: row;
+		margin: 0 auto;
+		padding: 12px 0;
+		max-width: 1070px;
+
+		.item-menu {
+			padding: 0;
+			border: none;
+			justify-content: center;
+			align-content: center;
+			font-size: 14px;
+			margin: 0;
+			.link-icon {
+				margin: 0;
+				height: 18px;
+				width: 18px;
+			}
+		}
+
+		.item-search {
+			.link-icon {
+				background-image: url(../assets/icons/search.svg);
+				display: block;
+			}
+			.input-container {
+				display: none;
+			}
+		}
+
+		#toggle-button,
+		.input-search {
+			display: none;
+		}
+	}
 }
 
-//Collapse menu styles
+//Collapsed menu styles
+
 .collapsed {
 	background-color: $black;
 	padding-bottom: 100vh;
 	max-height: 100vh;
 	transition: all 0.5s ease-in;
 }
-
 .item-close-menu {
 	gap: 0;
 }
@@ -184,7 +226,6 @@
 	margin-top: -8px;
 	transform: rotate(-45deg);
 }
-
 .icon-store-visibility {
 	visibility: hidden;
 }
