@@ -9,16 +9,16 @@ Los pasos que vamos a seguir son:
 - Recopilación de recursos (imágenes, fuentes, etc..).
 - Definición html de la estructura básica de la página (sin estilos).
 - Definición de estilos generales (colores y tipografías principalmente).
-- Maquetación y estilado por bloque o componente de nuestra página.
--
+- Maquetación y estilado por bloques o componentes de nuestra página.
 
 ## 1. Instalación de dependencias.
 
 ---
 
-En esta parte no vamos a pararnos mucho, es algo que se verá más adelante pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
+En esta parte no vamos a pararnos mucho, es algo que se verá más adelante, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
 Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo.
-Como vamos a utilizar `Sass` como preprocesador css necesitaremos instalarlo y también algo que transpile el código para que el navegador lo entienda. De esto se encargará `Webpack`.
+
+Vamos a utilizar `Sass` como preprocesador css, para ello necesitaremos instalarlo y también "algo" que transpile el código para que el navegador lo entienda. De esto se encargará `Webpack`.
 
 ## 2. Creación de la estructura.
 
@@ -29,8 +29,8 @@ Una vez conocemos los requisitos y el diseño del proyecto podemos empezar a cre
 Este proyecto está definido de la siguiente manera:
 
 - Un directorio raíz llamado `src`, aquí irá por ejemplo nuestro **index.html**.
-- Un subdirectorio `assets` donde colocaremos las fuentes, imágenes y todos los recursos estáticos que necesitamos.
-- Un subdirectorio `styles` para nuestros archivos css, sass, etc...
+- Un subdirectorio `assets` donde colocaremos las fuentes, imágenes y todos los recursos estáticos que necesitemos.
+- Un subdirectorio `styles` para nuestros estilos css, sass, etc...
 - Quedaría algo como esto:
 
       ```
@@ -39,7 +39,7 @@ Este proyecto está definido de la siguiente manera:
       |   index.js
       |
       +---assets
-      |   |   tile_small.jpg
+      |   |   logo.jpg
       |   |
       |   +---fonts
       |   |       SFProDisplay-Bold.ttf
@@ -48,15 +48,15 @@ Este proyecto está definido de la siguiente manera:
       |           search.svg
       |
       \---styles
-              style.scss
+              styles.scss
       ```
 
 ## 3. Recopilación de recursos
 
 ---
 
-Tener todos los recursos que vamos a necesitar ya importados y listos en nuestro proyecto es algo que nos agilizará mucho en el desarrollo.
-En un caso real estos recursos los extraeríamos de nuestro diseño o en el mejor de los casos nos los proporcionaría el diseñador.
+Tener todos los recursos que vamos a necesitar ya importados y listos en nuestro proyecto es algo que nos agilizará mucho el desarrollo.
+En un caso real, estos recursos los extraeríamos de nuestro diseño o en el mejor de los casos nos los proporcionaría el diseñador.
 Cuando hablo de recursos me refiero a imágenes, fuentes, vídeos, paleta de color, etc.
 
 ## 4. Definición html básico.
@@ -65,7 +65,7 @@ Cuando hablo de recursos me refiero a imágenes, fuentes, vídeos, paleta de col
 
 Personalmente me gusta crear una estructura básica de lo que será la página, con esto me refiero, por ejemplo, a añadir un header, un body y un footer inicial a los cuales añado un borde o un fondo para diferenciarlos y luego de la misma forma ir profundizando en cada uno de ellos. Esto no es algo estático ya que según vayamos añadiendo contenido en cada capa surgirán distintas necesidades para la colocación y distribución de los elementos.
 
-La estructura básica inicial para esta página es la siguiente:
+Estructura básica inicial:
 
 ```html
 <body>
@@ -76,7 +76,7 @@ La estructura básica inicial para esta página es la siguiente:
 	<section class="container">Hello section iPad Air</section>
 	<section class="container">Hello section watch and more</section>
 	<section class="container">Hello section watch and more</section>
-	<footer class="container"></footer>
+	<footer class="container">Hello footer</footer>
 </body>
 ```
 
@@ -162,7 +162,7 @@ Nosotros vamos a trabajar con `Sass` y será de una manera similar a la anterior
 
 Más adelante iremos viendo las virtudes y la potencia de utilizar un preprocesador para nuestros estilos pero de momento nos centraremos en definir nuestras variables.
 
-Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y el cual será llamado en el **html**.
+Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y que será llamado en el **html**.
 
 ### SASS
 
@@ -197,21 +197,23 @@ $link: #06c;
 
 ---
 
-Vamos ha empezar añadiendo el contenido y maquetando cada uno de los bloques de la web. Será una página responsiva por lo que utilizaremos el método llamado **"movile firsh"**, es decir iremos implementando el diseño desde las pantallas para móviles hasta llegar a las de escritorio.
+Vamos ha empezar añadiendo el contenido y maquetando cada uno de los bloques de la web.
 
-Al haber definido la estructura básica del proyecto ya tenemos preparados los distintos bloques a los cuales iremos añadiendo su contenido. Iremos completando cada uno de ellos, es decir, maquetaremos cada bloque en todas sus formas tratándolo de la manera más independiente posible y una vez terminado pasaremos al siguiente.
+Será una página responsiva por lo que utilizaremos la metodología **"movile first"**, es decir, iremos implementando el diseño desde las pantallas para móviles hasta llegar a las de escritorio.
+
+Iremos completando cada uno de los bloques, maquetándolos en todas sus formas y tratándolos de la manera más independiente posible.
 
 > Trabajar de esta manera nos ayudará a centrarnos en resolver un problema concreto sin el ruido que nos pueda generar el resto de elementos.
 
 > Trabajar de manera aislada no significa que nos olvidemos del resto, siempre hay que tener una perspectiva general, por ejemplo, para identificar clases que puedan ser promocionadas a globales o quizás haya bloques que interactúen entre ellos.
 
----
+<br/>
 
 ### 6.1 Top Menú
 
 ---
 
-Vamos a empezar de arriba a abajo así que primero nos fijaremos en el diseño de nuestro menú para comenzar por la vista en móviles.
+Vamos a empezar de arriba a abajo así que primero nos fijaremos en el diseño del menú en la vista para dispositivos móviles.
 
 **Vista Top Menu en dispositivos móviles**
 
@@ -318,7 +320,7 @@ Para los ítems utilizamos una lista, sin más.
 
 Podemos observar que los ítems que sólo contienen una imagen se les ha añadido una etiqueta `<span>` la cual no se muestra pero es importante en accesibilidad.
 
-Como nota curiosa, observando el código de Apple, me di cuenta que para los botones de abrir y cerrar el menú no utilizan una imagen o icono que suele ser lo habitual, sino que son simmmples etiquetas `<span>` pintadas con CSS, y así lo hemos implementado.
+Como nota curiosa, observando el código de Apple, me di cuenta que para los botones de abrir y cerrar el menú no utilizan una imagen o icono que suele ser lo habitual, sino que son simples etiquetas `<span>` pintadas con CSS, y así lo hemos implementado.
 
 > Se han añadido unos scripts para el funcionamiento del menú, esto no hace más que añadir el evento `onClick` al botón y mediante selectores añadimos nuevas classes `CSS` que modifican los elementos.
 
@@ -616,16 +618,24 @@ Y por último el código para el top menu.
 
 ### Analicemos el código.
 
-Lo primero que vemos es el import de las variables, la principal ventaja a la hora de utilizar variables es que si quisiesemos cambiar por ejemplo un color sólo tendríamos que modificar el valor de esa variable y ya quedaría cambiado en todo el proyecto, rápido y sencillo :-) .
+Lo primero que vemos es el import de las variables, la principal ventaja a la hora de utilizar variables es que si queremos cambiar por ejemplo un color sólo tendríamos que modificar el valor de esa variable y ya quedaría cambiado en todo el proyecto, rápido y sencillo :-) .
 
-Cada parte de la página tiene una clase `container` donde se definiran los estilos que afecten a todos los elementos por igual como puede ser el ancho. En este caso se ha tenido que añadir una específica para el color de fondo.
+Cada parte de la página tiene una clase `container` donde se definen los estilos que afectan a todos los elementos por igual como puede ser el ancho. En este caso se ha tenido que añadir una clase específica para el color de fondo.
 
 El anidamiento de clases que nos permite `Sass` nos ahorra tiempo a la hora de dar especificidad a los selectores o clases.
 
-La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;` en una sóla línea `flex-flow: rows;`. Utilizamos el `grid` por el orden de los elementos que cambia de una vista a otra y así poder moverlos. En el html están puestos en el orden de la vista para pantallas grandes por eso podemos cambiar el display a flex para que todo quede en su sitio y ocultar los campos que no se muestran.
+La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;` en una sóla línea `flex-flow: rows;`. Utilizamos un `grid` por que el orden de los elementos cambia de una vista a otra y así podremos moverlos. En el html están puestos en el orden de la vista para pantallas grandes, por eso podemos cambiar el display a flex para que todo quede en su sitio y ocultar los campos que no deben ser mostrados.
 
-Para los saltos de tamaños pantalla utilizamos los meida query `@meida`.
+Para los saltos de tamaños de pantalla utilizamos los media query `@media`.
 
-Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario.
+Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador.
 
-La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más posible a nuestro diseño. Siempre habrá variaciones, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código y la flexibilidad que nos dan estos programas no la tenemos en CSS. Por eso es conveniente que el diseñador (y viceversa) conozca un poco la parte de maquetación o programación web, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
+La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más fielmente posible a nuestro diseño. Siempre habrá variaciones, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que el diseñador (y viceversa) conozca un poco la parte de maquetación o programación web, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
+
+Los iconos están añadidos mediante CSS con la propiedad `background-image` también se podrían haber añadido como imagen `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida.
+
+> _Toda imagen basada en mapa de bits (píxeles) sufre pérdida de calidad y definición al ser escalada. Esto es mucho más evidente cuando el escalado es de ampliación._
+
+> _Las imágenes vectoriales están formadas por vectores. Un vector es un objeto geométrico definido mediante cálculos matemáticos, esta es la razón por la que este tipo de imágenes no tiene pérdidas de calidad al ser escaladas. Una fuente o tipografía es un ejemplo claro de imágen vectorial._
+
+Los comentarios en el código no ayudan en su mantenimiento. Al final del documento encontramos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
