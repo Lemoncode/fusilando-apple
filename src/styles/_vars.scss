@@ -1,12 +1,16 @@
 //colors
 $primary: rgba(0, 0, 0, 0.92);
 $secondary: #f5f5f7;
+$backgroundGrey: #fbfbfd;
 $textDark: #1d1d1f;
 $textGrey: #86868b;
 $textGreyDark: #515154;
 $link: #06c;
+$linkLight: #2997ff;
 $black: #000;
 $white: #fff;
 
 //fonts
-$itemMenuFont: "SF Pro Text Regular";
+$itemMenuFont: "SF Pro Text Regular", "Helvetica", "Arial", sans-serif;
+$headline: "SF Pro Display Semibold", "Helvetica", "Arial", sans-serif;
+$subhead: "SF Pro Display Regular", "Helvetica", "Arial", sans-serif;

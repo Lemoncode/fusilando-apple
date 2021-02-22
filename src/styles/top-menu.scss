@@ -2,19 +2,22 @@
 
 .top-menu-container {
 	background-color: $primary;
-	margin: 0 auto;
-	max-height: 50px;
+	top: 0;
+	max-height: 3.125em;
 	overflow: hidden;
 	box-sizing: border-box;
 	transition: max-height 0.5s ease-out;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
 }
 
 .top-menu {
 	list-style: none;
 	color: rgba($secondary, 0.9);
 	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
-	padding: 3% 1%;
-	margin: -10px 0 0 0;
+	padding: 0.8em 0.5em;
+	margin: -0.625em 0 0 0;
 	display: grid;
 	cursor: pointer;
 	grid-template-areas:
@@ -29,13 +32,13 @@
 		"item7 item7 item7";
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 0.5fr 1fr repeat(7, 0.5fr);
-	row-gap: 8px;
+	row-gap: 0.5em;
 
 	.item-menu {
 		width: 80%;
 		margin: 0 auto;
 		display: flex;
-		padding: 10px 0;
+		padding: 0.625em 0;
 		align-self: center;
 		opacity: 0.8;
 
@@ -51,8 +54,8 @@
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
-			height: 21px;
-			width: 21px;
+			height: 1.313em;
+			width: 1.313em;
 			margin: 0 auto;
 			display: block;
 			opacity: 0.8;
@@ -70,19 +73,19 @@
 		flex-flow: column;
 		opacity: 0.7;
 		cursor: pointer;
-		gap: 6px;
+		gap: 0.4em;
 
 		.menu-line-one {
-			height: 2px;
-			width: 17px;
-			border-radius: 0.5px;
+			height: 0.125em;
+			width: 1.063em;
+			border-radius: 0.031em;
 			display: block;
 			background-color: $secondary;
 		}
 		.menu-line-two {
-			height: 1px;
-			width: 17px;
-			border-radius: 0.5px;
+			height: 0.075em;
+			width: 1.063em;
+			border-radius: 0.031em;
 			display: block;
 			background-color: $secondary;
 		}
@@ -125,7 +128,7 @@
 		grid-area: search;
 		border-bottom: 1px solid $textGreyDark;
 		width: 100%;
-		padding: 5px 0 15px;
+		padding: 0.313em 0 0.938em;
 
 		.link-icon {
 			display: none;
@@ -139,9 +142,9 @@
 			justify-content: space-between;
 			align-content: center;
 			flex-flow: row;
-			gap: 1%;
-			padding: 2%;
-			border-radius: 6px;
+			gap: 0.7em;
+			padding: 0.6em;
+			border-radius: 0.375em;
 
 			.link-icon-movile {
 				background-image: url(../assets/icons/search.svg);

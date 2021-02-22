@@ -2,3 +2,9 @@
 @import "./vars";
 @import "./fonts";
 @import "./top-menu.scss";
+@import "./main.scss";
+
+body {
+	min-width: 320px;
+	font-size: 1rem;
+}

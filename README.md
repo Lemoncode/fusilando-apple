@@ -70,12 +70,14 @@ Estructura básica inicial:
 ```html
 <body>
 	<nav class="container">Hello top menu</nav>
-	<div class="container">Hello container</div>
-	<section class="container">Hello section iPhone 12</section>
-	<section class="container">Hello section iPhone 12 pro</section>
-	<section class="container">Hello section iPad Air</section>
-	<section class="container">Hello section watch and more</section>
-	<section class="container">Hello section watch and more</section>
+	<main>
+		<div class="container">Hello container</div>
+		<section class="container">Hello section iPhone 12</section>
+		<section class="container">Hello section iPhone 12 pro</section>
+		<section class="container">Hello section iPad Air</section>
+		<section class="container">Hello section watch and more</section>
+		<section class="container">Hello section watch and more</section>
+	</main>
 	<footer class="container">Hello footer</footer>
 </body>
 ```
@@ -290,6 +292,8 @@ La estructura **html** queda de la siguiente forma:
 				</li>
 			</ul>
 		</nav>
+		<main></main>
+		<footer></footer>
 	</body>
 	<!-- Functions navigate menu in moviles -->
 	<script>
@@ -639,3 +643,79 @@ Los iconos están añadidos mediante CSS con la propiedad `background-image` tam
 > _Las imágenes vectoriales están formadas por vectores. Un vector es un objeto geométrico definido mediante cálculos matemáticos, esta es la razón por la que este tipo de imágenes no tiene pérdidas de calidad al ser escaladas. Una fuente o tipografía es un ejemplo claro de imágen vectorial._
 
 Los comentarios en el código no ayudan en su mantenimiento. Al final del documento encontramos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
+
+<br/>
+
+### 6.2 Main
+
+---
+
+**Vista main en dispositivos móviles**
+
+![menú tablet](public/main-movile.png)
+
+**Vista main en tablets**
+
+![menú tablet](public/main-tablet.png)
+
+**Vista main para PC**
+
+![menú tablet](public/main-desktop.png)
+
+Si nos fijamos en el [diseño general](public/desktop-design.png) vemos que los enlaces tienen diferentes estilos en el main y en footer por lo que definiremos estos dentro de su bloque correspondiente.
+
+### 6.2.1 Texto compra online.
+
+El primer bloque que nos encontramos es un pequeño texto con un enlace `Compra online`.
+
+> Definimos los estilos generales para los enlaces de este bloque.
+
+**index.html**
+
+```html
+<main>
+	<div class="online-shop-container section">
+		<span class="link">Compra online</span> con la ayuda de un Especialista y
+		disfruta de envío gratuito sin contacto físico.
+	</div>
+	<section class="container iphone"></section>
+	<section class="container collection"></section>
+</main>
+```
+
+**main.scss**
+
+```scss
+@import "./vars";
+
+main {
+	width: 100%;
+
+	.link {
+		color: $link;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.online-shop-container {
+		background-color: $backgroundGrey;
+		color: $textDark;
+		width: 80%;
+		max-width: 600px;
+		padding: 10px 0;
+		margin: 0 auto;
+		box-sizing: border-box;
+		text-align: center;
+		line-height: 1.47059;
+		letter-spacing: -0.022em;
+		font-family: "SF Pro Text Regular";
+		font-size: 14px;
+
+		@media (min-width: 760px) {
+			padding: 12px 0;
+		}
+	}
+}
+```
+
+### 6.2.2 Sección iPhone y iPhone Pro
