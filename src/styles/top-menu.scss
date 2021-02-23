@@ -149,8 +149,8 @@
 			.link-icon-movile {
 				background-image: url(../assets/icons/search.svg);
 				width: 3%;
-				height: 14px;
-				width: 14px;
+				height: 0.875em;
+				width: 0.875em;
 				align-self: center;
 			}
 			.input-search {
@@ -159,7 +159,7 @@
 				border: none;
 				outline: none;
 				color: rgba($secondary, 0.7);
-				font-size: 17px;
+				font-size: 1.063em;
 				line-height: 1.23536;
 				letter-spacing: -0.022em;
 			}
@@ -179,21 +179,20 @@
 		display: flex;
 		flex-flow: row;
 		margin: 0 auto;
-		padding: 12px 0;
-		max-width: 1070px;
+		padding: 0.75em 0;
+		max-width: 66.875em;
+		justify-content: space-around;
+		align-content: center;
 
 		.item-menu {
+			width: auto;
 			padding: 0;
 			border: none;
-			justify-content: center;
-			align-content: center;
-			font-size: 14px;
+			font-size: 0.875em;
 			margin: 0;
 
 			.link-icon {
 				margin: 0;
-				height: 18px;
-				width: 18px;
 			}
 		}
 
@@ -232,8 +231,8 @@
 }
 .menu-line-two-close {
 	opacity: 0.8;
-	height: 2px !important;
-	margin-top: -8px;
+	height: 0.125em !important;
+	margin-top: -0.52em;
 	transform: rotate(-45deg);
 }
 .icon-store-visibility {

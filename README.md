@@ -16,9 +16,7 @@ Los pasos que vamos a seguir son:
 ---
 
 En esta parte no vamos a pararnos mucho, es algo que se verá más adelante, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
-Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo.
-
-Vamos a utilizar `Sass` como preprocesador css, para ello necesitaremos instalarlo y también "algo" que transpile el código para que el navegador lo entienda. De esto se encargará `Webpack`.
+Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo y también incluye todo lo necesario para poder utilizar `Sass`.
 
 ## 2. Creación de la estructura.
 
@@ -201,7 +199,7 @@ $link: #06c;
 
 Vamos ha empezar añadiendo el contenido y maquetando cada uno de los bloques de la web.
 
-Será una página responsiva por lo que utilizaremos la metodología **"movile first"**, es decir, iremos implementando el diseño desde las pantallas para móviles hasta llegar a las de escritorio.
+Será una página responsiva por lo que utilizaremos la metodología **"mobile first"**, es decir, iremos implementando el diseño desde las pantallas para móviles hasta llegar a las de escritorio.
 
 Iremos completando cada uno de los bloques, maquetándolos en todas sus formas y tratándolos de la manera más independiente posible.
 
@@ -384,19 +382,22 @@ Y por último el código para el top menu.
 
 .top-menu-container {
 	background-color: $primary;
-	margin: 0 auto;
-	max-height: 50px;
+	top: 0;
+	max-height: 3.125em;
 	overflow: hidden;
 	box-sizing: border-box;
 	transition: max-height 0.5s ease-out;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
 }
 
 .top-menu {
 	list-style: none;
 	color: rgba($secondary, 0.9);
 	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
-	padding: 3% 1%;
-	margin: -10px 0 0 0;
+	padding: 0.8em 0.5em;
+	margin: -0.625em 0 0 0;
 	display: grid;
 	cursor: pointer;
 	grid-template-areas:
@@ -411,13 +412,13 @@ Y por último el código para el top menu.
 		"item7 item7 item7";
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 0.5fr 1fr repeat(7, 0.5fr);
-	row-gap: 8px;
+	row-gap: 0.5em;
 
 	.item-menu {
 		width: 80%;
 		margin: 0 auto;
 		display: flex;
-		padding: 10px 0;
+		padding: 0.625em 0;
 		align-self: center;
 		opacity: 0.8;
 
@@ -433,8 +434,8 @@ Y por último el código para el top menu.
 			background-repeat: no-repeat;
 			background-size: contain;
 			background-position: center;
-			height: 21px;
-			width: 21px;
+			height: 1.313em;
+			width: 1.313em;
 			margin: 0 auto;
 			display: block;
 			opacity: 0.8;
@@ -452,19 +453,19 @@ Y por último el código para el top menu.
 		flex-flow: column;
 		opacity: 0.7;
 		cursor: pointer;
-		gap: 6px;
+		gap: 0.4em;
 
 		.menu-line-one {
-			height: 2px;
-			width: 17px;
-			border-radius: 0.5px;
+			height: 0.125em;
+			width: 1.063em;
+			border-radius: 0.031em;
 			display: block;
 			background-color: $secondary;
 		}
 		.menu-line-two {
-			height: 1px;
-			width: 17px;
-			border-radius: 0.5px;
+			height: 0.075em;
+			width: 1.063em;
+			border-radius: 0.031em;
 			display: block;
 			background-color: $secondary;
 		}
@@ -507,7 +508,7 @@ Y por último el código para el top menu.
 		grid-area: search;
 		border-bottom: 1px solid $textGreyDark;
 		width: 100%;
-		padding: 5px 0 15px;
+		padding: 0.313em 0 0.938em;
 
 		.link-icon {
 			display: none;
@@ -521,15 +522,15 @@ Y por último el código para el top menu.
 			justify-content: space-between;
 			align-content: center;
 			flex-flow: row;
-			gap: 1%;
-			padding: 2%;
-			border-radius: 6px;
+			gap: 0.7em;
+			padding: 0.6em;
+			border-radius: 0.375em;
 
 			.link-icon-movile {
 				background-image: url(../assets/icons/search.svg);
 				width: 3%;
-				height: 14px;
-				width: 14px;
+				height: 0.875em;
+				width: 0.875em;
 				align-self: center;
 			}
 			.input-search {
@@ -538,7 +539,7 @@ Y por último el código para el top menu.
 				border: none;
 				outline: none;
 				color: rgba($secondary, 0.7);
-				font-size: 17px;
+				font-size: 1.063em;
 				line-height: 1.23536;
 				letter-spacing: -0.022em;
 			}
@@ -558,21 +559,20 @@ Y por último el código para el top menu.
 		display: flex;
 		flex-flow: row;
 		margin: 0 auto;
-		padding: 12px 0;
-		max-width: 1070px;
+		padding: 0.75em 0;
+		max-width: 66.875em;
+		justify-content: space-around;
+		align-content: center;
 
 		.item-menu {
+			width: auto;
 			padding: 0;
 			border: none;
-			justify-content: center;
-			align-content: center;
-			font-size: 14px;
+			font-size: 0.875em;
 			margin: 0;
 
 			.link-icon {
 				margin: 0;
-				height: 18px;
-				width: 18px;
 			}
 		}
 
@@ -611,8 +611,8 @@ Y por último el código para el top menu.
 }
 .menu-line-two-close {
 	opacity: 0.8;
-	height: 2px !important;
-	margin-top: -8px;
+	height: 0.125em !important;
+	margin-top: -0.52em;
 	transform: rotate(-45deg);
 }
 .icon-store-visibility {
@@ -634,15 +634,57 @@ Para los saltos de tamaños de pantalla utilizamos los media query `@media`.
 
 Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador.
 
-La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más fielmente posible a nuestro diseño. Siempre habrá variaciones, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que el diseñador (y viceversa) conozca un poco la parte de maquetación o programación web, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
+La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más fielmente posible al diseño. Para esto vamos a utilizar valores relativos `em`, `rem` y `%` evitando siempre que sea posible el uso de valores absolutos en `px`.
 
-Los iconos están añadidos mediante CSS con la propiedad `background-image` también se podrían haber añadido como imagen `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida.
+Los valores `rem` utilizan como referencia el `font-size` definido en el elemento raíz del documento `<html>`, es decir si definimos en esta etiqueta un `font-size: 16px` en el resto del documento `1rem` sera equivalente a `16px`.
+
+Los valores `em` funcionan igual que `rem` pero relativos al primer `font-size` que se encuentre definido en su contenedor padre. Lo vemos mejor con un ejemplo.
+
+Tenemos el siguiente html:
+
+```html
+<html>
+	<body>
+		<div class="container">
+			<p>Soy un elemento hijo de .container</p>
+		</div>
+	</body>
+</html>
+```
+
+Y su CSS:
+
+```css
+html {
+	font-size: 100%; /* 100% = 16px */
+}
+div.container {
+	font-size: 2em;
+}
+p {
+	font-size: 1em;
+}
+```
+
+Aquí el equivalente en `px` para `div.container` es de `32px` ya que su referencia es el `font-size` de `<html>` pero para `<p>` su referente es `<div class="container">` y su `font-size: 1em;` en `px` es `32px` ya que toma como referencia su contenedor padre más directo.
+
+Si cambiamos en `<p>` su valor a `1rem` su `font-size` en pixels pasaría a ser de `16px`.
+
+> Utilizaremos `em` para conseguir componentes aislados y así poder reutilizarlos.
+
+> Utilizaremos `rem` para establecer el valor inicial desde el componente raíz de nuestro documento.
+
+> La combinación de ambos tipos de valores y su utilización a la hora de definir márgenes o paddings harán que consigamos un diseño mucho más flexible y responsivo ya que todo se adaptara de manera proporcional al elemento clave.
+
+Siempre habrá variaciones respecto al diseño original, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que tanto diseñador como programador conozcan un poco el trabajo de ambas partes, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
+
+Los iconos están añadidos mediante CSS con la propiedad `background-image` también se podrían haber añadido como elemento `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida y la posibilidad de cambiar ciertas propiedades como el color mediante código si lo incluimos como etiqueta html.
 
 > _Toda imagen basada en mapa de bits (píxeles) sufre pérdida de calidad y definición al ser escalada. Esto es mucho más evidente cuando el escalado es de ampliación._
 
 > _Las imágenes vectoriales están formadas por vectores. Un vector es un objeto geométrico definido mediante cálculos matemáticos, esta es la razón por la que este tipo de imágenes no tiene pérdidas de calidad al ser escaladas. Una fuente o tipografía es un ejemplo claro de imágen vectorial._
 
-Los comentarios en el código no ayudan en su mantenimiento. Al final del documento encontramos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
+Los comentarios en el código nos ayudan en su mantenimiento. Al final del documento encontramos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
 
 <br/>
 
@@ -650,17 +692,11 @@ Los comentarios en el código no ayudan en su mantenimiento. Al final del docume
 
 ---
 
-**Vista main en dispositivos móviles**
+[**Vista main en dispositivos móviles**](public/main-movile.png)
 
-![menú tablet](public/main-movile.png)
+[**Vista main en tablets**](public/main-tablet.png)
 
-**Vista main en tablets**
-
-![menú tablet](public/main-tablet.png)
-
-**Vista main para PC**
-
-![menú tablet](public/main-desktop.png)
+[**Vista main para PC**](public/main-desktop.png)
 
 Si nos fijamos en el [diseño general](public/desktop-design.png) vemos que los enlaces tienen diferentes estilos en el main y en footer por lo que definiremos estos dentro de su bloque correspondiente.
 

@@ -4,7 +4,7 @@
 @import "./top-menu.scss";
 @import "./main.scss";
 
-body {
-	min-width: 320px;
+html {
+	min-width: 20em;
 	font-size: 1rem;
 }
