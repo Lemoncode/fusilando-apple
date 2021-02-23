@@ -29,7 +29,7 @@ main {
 	}
 
 	.headline {
-		font-family: $headline;
+		font-family: $SFProDisplaySemibold;
 		color: $primaryDark;
 		text-align: center;
 		display: block;
@@ -37,7 +37,7 @@ main {
 	}
 
 	.subhead {
-		font-family: $subhead;
+		font-family: $SFProDisplayRegular;
 		font-weight: 400;
 		font-size: 0.9em;
 		line-height: 1.4211;
@@ -56,7 +56,7 @@ main {
 	.price {
 		max-width: 250px;
 		margin: 0.5em auto;
-		font-family: $itemMenuFont;
+		font-family: $SFProTextRegular;
 		font-size: 0.65em;
 		color: $secondary;
 		text-align: center;
@@ -76,7 +76,7 @@ main {
 
 	.cta-links {
 		font-size: 0.9em;
-		font-family: $subhead;
+		font-family: $SFProDisplayRegular;
 		margin-top: 0.7em;
 		text-align: center;
 
@@ -86,7 +86,7 @@ main {
 
 		::after {
 			font-size: 0.8em;
-			font-family: $headline;
+			font-family: $SFProDisplaySemibold;
 			content: ">";
 			margin: 0 0.4em;
 		}

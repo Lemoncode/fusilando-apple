@@ -163,7 +163,7 @@ $dark: #000;
 $light: #fff;
 
 //fonts
-$itemMenuFont: "SF Pro Text Regular";
+$SFProTextRegular: "SF Pro Text Regular";
 ```
 
 Y por último el código para el top menu.
@@ -188,7 +188,7 @@ Y por último el código para el top menu.
 .top-menu {
 	list-style: none;
 	color: rgba($primaryLight, 0.9);
-	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
+	font-family: $SFProTextRegular, Helvetica, Arial, sans-serif;
 	padding: 0.8em 0.5em;
 	margin: -0.625em 0 0 0;
 	display: grid;
