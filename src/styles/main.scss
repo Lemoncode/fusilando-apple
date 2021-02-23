@@ -30,7 +30,7 @@ main {
 
 	.headline {
 		font-family: $headline;
-		color: $textDark;
+		color: $primaryDark;
 		text-align: center;
 		display: block;
 		margin: 0.5em auto 0;
@@ -42,7 +42,7 @@ main {
 		font-size: 0.9em;
 		line-height: 1.4211;
 		letter-spacing: 0.012em;
-		color: $textDark;
+		color: $primaryDark;
 		text-align: center;
 		display: block;
 		width: 100%;
@@ -58,7 +58,7 @@ main {
 		margin: 0.5em auto;
 		font-family: $itemMenuFont;
 		font-size: 0.65em;
-		color: $textGrey;
+		color: $secondary;
 		text-align: center;
 
 		@media (min-width: 720px) {
@@ -102,8 +102,8 @@ main {
 
 	//online shopping
 	.online-shopping-container {
-		background-color: $secondary;
-		color: $textDark;
+		background-color: $primaryLight;
+		color: $primaryDark;
 		width: 100%;
 		margin: 50px auto 0;
 		.online-shopping-wrapper {
@@ -126,14 +126,14 @@ main {
 	//iPhone secction
 	.iphone {
 		.iphone-pro {
-			background-color: $black;
+			background-color: $dark;
 			position: relative;
 			z-index: -5;
 			overflow: hidden;
 
 			.headline,
 			.subhead {
-				color: $white;
+				color: $light;
 			}
 			.cta-links {
 				.link {

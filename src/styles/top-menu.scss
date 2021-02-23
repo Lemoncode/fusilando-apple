@@ -1,7 +1,7 @@
 @import "./vars";
 
 .top-menu-container {
-	background-color: $primary;
+	background-color: $backgroundTopMenu;
 	top: 0;
 	max-height: 3.125em;
 	overflow: hidden;
@@ -14,7 +14,7 @@
 
 .top-menu {
 	list-style: none;
-	color: rgba($secondary, 0.9);
+	color: rgba($primaryLight, 0.9);
 	font-family: $itemMenuFont, Helvetica, Arial, sans-serif;
 	padding: 0.8em 0.5em;
 	margin: -0.625em 0 0 0;
@@ -80,14 +80,14 @@
 			width: 1.063em;
 			border-radius: 0.031em;
 			display: block;
-			background-color: $secondary;
+			background-color: $primaryLight;
 		}
 		.menu-line-two {
 			height: 0.075em;
 			width: 1.063em;
 			border-radius: 0.031em;
 			display: block;
-			background-color: $secondary;
+			background-color: $primaryLight;
 		}
 	}
 	.item-apple {
@@ -99,34 +99,34 @@
 
 	.item-mac {
 		grid-area: item1;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-ipad {
 		grid-area: item2;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-iphone {
 		grid-area: item3;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-watch {
 		grid-area: item4;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-tv {
 		grid-area: item5;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-music {
 		grid-area: item6;
-		border-bottom: 2px solid $textGreyDark;
+		border-bottom: 2px solid $secondaryDark;
 	}
 	.item-support {
 		grid-area: item7;
 	}
 	.item-search {
 		grid-area: search;
-		border-bottom: 1px solid $textGreyDark;
+		border-bottom: 1px solid $secondaryDark;
 		width: 100%;
 		padding: 0.313em 0 0.938em;
 
@@ -135,7 +135,7 @@
 		}
 
 		.input-container {
-			background-color: $textDark;
+			background-color: $primaryDark;
 			width: 93%;
 			margin: 0 auto;
 			display: flex;
@@ -155,10 +155,10 @@
 			}
 			.input-search {
 				width: 93%;
-				background-color: $textDark;
+				background-color: $primaryDark;
 				border: none;
 				outline: none;
-				color: rgba($secondary, 0.7);
+				color: rgba($primaryLight, 0.7);
 				font-size: 1.063em;
 				line-height: 1.23536;
 				letter-spacing: -0.022em;
@@ -217,7 +217,7 @@
 //Collapsed menu styles
 
 .collapsed {
-	background-color: $black;
+	background-color: $dark;
 	padding-bottom: 100vh;
 	max-height: 100vh;
 	transition: all 0.5s ease-in;
