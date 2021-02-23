@@ -163,7 +163,7 @@ $dark: #000;
 $light: #fff;
 
 //fonts
-$SFProTextRegular: "SF Pro Text Regular";
+$SFProTextRegular: "SF Pro Text Regular", "Helvetica", "Arial", sans-serif;
 ```
 
 Y por último el código para el top menu.
@@ -417,19 +417,19 @@ Y por último el código para el top menu.
 
 Lo primero que vemos es el import de las variables, la principal ventaja a la hora de utilizar variables es que si queremos cambiar por ejemplo un color sólo tendríamos que modificar el valor de esa variable y ya quedaría cambiado en todo el proyecto, rápido y sencillo :-) .
 
-Cada parte de la página tiene una clase `container` donde se definen los estilos que afectan a todos los elementos por igual como puede ser el ancho. En este caso se ha tenido que añadir una clase específica para el color de fondo.
+> CSS ya adminte variables de forma nativa y es soportado por todas la versiones modernas de navegadores. `--myVariable: valor;`
 
 El anidamiento de clases que nos permite `Sass` nos ahorra tiempo a la hora de dar especificidad a los selectores o clases.
 
-La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;` en una sóla línea `flex-flow: rows;`. Utilizamos un `grid` por que el orden de los elementos cambia de una vista a otra y así podremos moverlos. En el html están puestos en el orden de la vista para pantallas grandes, por eso podemos cambiar el display a flex para que todo quede en su sitio y ocultar los campos que no deben ser mostrados.
+La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;`, en una sóla línea `flex-flow: rows;`. Utilizamos un `grid` por que el orden de los elementos cambia de una vista a otra y así podremos moverlos. En el html los items están puestos en el orden de la vista para pantallas grandes, por eso podemos cambiar el display a flex y todo queda en su sitio solo tenemos que ocultar los campos que no queremos mostrar.
 
 Para los saltos de tamaños de pantalla utilizamos los media query `@media`.
 
-Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador.
+_Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador._
 
 La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más fielmente posible al diseño. Para esto vamos a utilizar valores relativos `em`, `rem` y `%` evitando siempre que sea posible el uso de valores absolutos en `px`.
 
-Los valores `rem` utilizan como referencia el `font-size` definido en el elemento raíz del documento `<html>`, es decir si definimos en esta etiqueta un `font-size: 16px` en el resto del documento `1rem` sera equivalente a `16px`.
+Los valores `rem` utilizan como referencia el `font-size` definido en el elemento raíz del documento `<html>`, es decir si definimos en esta etiqueta un `font-size: 16px` en el resto del documento `1rem` sera equivalente a `16px`, si no se define se toma el valor por defecto del navegador o el valor que el usuario haya establecido en este.
 
 Los valores `em` funcionan igual que `rem` pero relativos al primer `font-size` que se encuentre definido en su contenedor padre. Lo vemos mejor con un ejemplo.
 
@@ -467,14 +467,14 @@ Si cambiamos en `<p>` su valor a `1rem` su `font-size` en pixels pasaría a ser 
 
 > Utilizaremos `rem` para establecer el valor inicial desde el componente raíz de nuestro documento.
 
-> La combinación de ambos tipos de valores y su utilización a la hora de definir márgenes o paddings harán que consigamos un diseño mucho más flexible y responsivo ya que todo se adaptara de manera proporcional al elemento clave.
+> La combinación de ambos tipos de valores y su utilización a la hora de definir márgenes o paddings harán que consigamos un diseño mucho más flexible y responsivo ya que a la hora de escalar todo se adaptara de manera proporcional al elemento clave.
 
-Siempre habrá variaciones respecto al diseño original, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que tanto diseñador como programador conozcan un poco el trabajo de ambas partes, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
+Siempre habrá pequeñas variaciones respecto al diseño original, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que tanto diseñador como programador conozcan un poco el trabajo de ambas partes. Conseguir el "pixel perfect" no solo va ha depender de lo buen maquetador que seas, un buen diseño con perspectiva es fundamental, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
 
-Los iconos están añadidos mediante CSS con la propiedad `background-image` también se podrían haber añadido como elemento `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida y la posibilidad de cambiar ciertas propiedades como el color mediante código si lo incluimos como etiqueta html.
+Los iconos están añadidos mediante CSS con la propiedad `background-image`, también se podrían haber añadido como elemento `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida y la posibilidad de cambiar ciertas propiedades como el color mediante código si lo incluimos como etiqueta html.
 
 > _Toda imagen basada en mapa de bits (píxeles) sufre pérdida de calidad y definición al ser escalada. Esto es mucho más evidente cuando el escalado es de ampliación._
 
 > _Las imágenes vectoriales están formadas por vectores. Un vector es un objeto geométrico definido mediante cálculos matemáticos, esta es la razón por la que este tipo de imágenes no tiene pérdidas de calidad al ser escaladas. Una fuente o tipografía es un ejemplo claro de imágen vectorial._
 
-Los comentarios en el código nos ayudan en su mantenimiento. Al final del documento encontramos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
+Los comentarios en el código nos ayudan en su mantenimiento. Al final del documento vemos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.

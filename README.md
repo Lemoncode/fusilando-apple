@@ -207,74 +207,12 @@ Iremos completando cada uno de los bloques, maquetándolos en todas sus formas y
 
 > Trabajar de manera aislada no significa que nos olvidemos del resto, siempre hay que tener una perspectiva general, por ejemplo, para identificar clases que puedan ser promocionadas a globales o quizás haya bloques que interactúen entre ellos.
 
-<br/>
+### Documentación por partes
+
+- [Top Menu](./public/top-menu.md)
+- [Main](./public/main.md)
+- [Footer]()
 
 <br/>
 
-### 6.2 Main
-
----
-
-[**Vista main en dispositivos móviles**](public/main-movile.png)
-
-[**Vista main en tablets**](public/main-tablet.png)
-
-[**Vista main para PC**](public/main-desktop.png)
-
-Si nos fijamos en el [diseño general](public/desktop-design.png) vemos que los enlaces tienen diferentes estilos en el main y en footer por lo que definiremos estos dentro de su bloque correspondiente.
-
-### 6.2.1 Texto compra online.
-
-El primer bloque que nos encontramos es un pequeño texto con un enlace `Compra online`.
-
-> Definimos los estilos generales para los enlaces de este bloque.
-
-**index.html**
-
-```html
-<main>
-	<div class="online-shop-container section">
-		<span class="link">Compra online</span> con la ayuda de un Especialista y
-		disfruta de envío gratuito sin contacto físico.
-	</div>
-	<section class="container iphone"></section>
-	<section class="container collection"></section>
-</main>
-```
-
-**main.scss**
-
-```scss
-@import "./vars";
-
-main {
-	width: 100%;
-
-	.link {
-		color: $link;
-		text-decoration: none;
-		cursor: pointer;
-	}
-
-	.online-shop-container {
-		background-color: $backgroundLight;
-		color: $primaryDark;
-		width: 80%;
-		max-width: 600px;
-		padding: 10px 0;
-		margin: 0 auto;
-		box-sizing: border-box;
-		text-align: center;
-		line-height: 1.47059;
-		letter-spacing: -0.022em;
-		font-family: "SF Pro Text Regular";
-		font-size: 14px;
-
-		@media (min-width: 760px) {
-			padding: 12px 0;
-		}
-	}
-}
-```
-
-### 6.2.2 Sección iPhone y iPhone Pro
+<br/>
