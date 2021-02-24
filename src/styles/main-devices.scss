@@ -154,7 +154,10 @@ main {
 					background-size: 3010px 736px;
 				}
 			}
+		}
 
+		//iPhone section
+		.iphone-12 {
 			.image-iphone-12 {
 				background-image: url(../assets/iphone_12_small.jpg);
 
@@ -163,6 +166,22 @@ main {
 				}
 				@media (min-width: 1020px) {
 					background-image: url(../assets/iphone_12_large.jpg);
+				}
+			}
+		}
+		.iphone-pro {
+			background-color: $dark;
+			position: relative;
+			z-index: -5;
+			overflow: hidden;
+
+			.headline,
+			.subhead {
+				color: $light;
+			}
+			.links-container {
+				.link {
+					color: $linkLight;
 				}
 			}
 			.image-iphone-pro {
@@ -177,42 +196,6 @@ main {
 					margin-top: -300px;
 					top: -15px;
 					background-image: url(../assets/iphone_12_pro_large.jpg);
-				}
-			}
-			.image-ipad {
-				background-image: url(../assets/ipad_small.jpg);
-				background-position-y: -40px;
-				margin-top: 0px;
-
-				@media (min-width: 720px) {
-					width: 796px;
-					height: 450px;
-					background-size: 796px 450px;
-					background-image: url(../assets/ipad_medium.jpg);
-				}
-				@media (min-width: 1020px) {
-					width: 1155px;
-					height: 495px;
-					background-size: 1155px 495px;
-					background-image: url(../assets/ipad_large.jpg);
-				}
-			}
-		}
-
-		//iPhone section
-		.iphone-pro {
-			background-color: $dark;
-			position: relative;
-			z-index: -5;
-			overflow: hidden;
-
-			.headline,
-			.subhead {
-				color: $light;
-			}
-			.links-container {
-				.link {
-					color: $linkLight;
 				}
 			}
 		}
@@ -241,8 +224,22 @@ main {
 					margin-top: 0;
 				}
 			}
-			.img-container {
+			.image-ipad {
+				background-image: url(../assets/ipad_small.jpg);
+				background-position-y: -40px;
+				margin-top: 0px;
+
 				@media (min-width: 720px) {
+					width: 796px;
+					height: 450px;
+					background-size: 796px 450px;
+					background-image: url(../assets/ipad_medium.jpg);
+				}
+				@media (min-width: 1020px) {
+					width: 1155px;
+					height: 495px;
+					background-size: 1155px 495px;
+					background-image: url(../assets/ipad_large.jpg);
 				}
 			}
 		}
