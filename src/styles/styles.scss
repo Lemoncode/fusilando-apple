@@ -1,4 +1,10 @@
 @import "./_normalize.css";
-@import "./vars";
 @import "./fonts";
+@import "./vars";
 @import "./top-menu.scss";
+@import "./main.scss";
+
+html {
+	min-width: 20em;
+	font-size: 1rem;
+}
