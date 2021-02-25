@@ -1,5 +1,3 @@
-@import "./vars";
-
 main {
 	.collection-container {
 		display: grid;
@@ -160,18 +158,25 @@ main {
 				}
 				@media (min-width: 1020px) {
 					background-image: url(../assets/one-large.png);
+					height: 35px;
+					background-size: 135px 35px;
 				}
 			}
 
 			.subhead {
 				margin-top: 2.5em;
+				@media (min-width: 1020px) {
+					margin-top: 2em;
+					font-size: 1.3em;
+				}
 			}
 
 			.image-one {
 				background-image: url(../assets/tile_small.jpg);
-				width: 100%;
-				background-size: 100% auto;
-				top: -20%;
+				width: 350px;
+				height: 260px;
+				background-size: 350px 260px;
+				top: 5%;
 
 				@media (min-width: 720px) {
 					background-image: url(../assets/tile_medium.jpg);
@@ -179,6 +184,10 @@ main {
 				}
 				@media (min-width: 1020px) {
 					background-image: url(../assets/tile_large.jpg);
+					width: 562px;
+					height: 330px;
+					background-size: 562px 330px;
+					top: 2em;
 				}
 			}
 		}
@@ -251,7 +260,7 @@ main {
 					background-image: url(../assets/logo_apple-tv_large.png);
 				}
 			}
-			.text-container {
+			.header-collection-wrapper {
 				position: relative;
 			}
 			.play {

@@ -88,7 +88,7 @@ Este punto lo podemos afrontar de dos formas, una si utilizamos CSS y otra si ut
 
 > En cualquiera de los dos casos vamos a añadir un `_normalize.css` para resetear los estilos que cada navegador implementa por defecto, de esta manera minimizamos las diferencias al mostrar la página en cada uno de ellos.
 
-> _El guión bajo en el nombre lo utilizo para diferenciar los archivos con estilos globales o variables de los específicos de cada bloque o componente... a parte de por convención_ :-)
+> \_El guión bajo en el nombre lo utilizo para diferenciar los archivos con estilos globales o variables de los específicos de cada bloque o componente.
 
 Si optamos por usar CSS crearemos un archivo `_global.css` que tendrá las clases e Ids globales para títulos, párrafos, enlaces, etc... otro para las fuentes `_fonts.css` y uno principal llamado `styles.css` que será el que cargue el resto de CSSs y el cual será llamado en el **html**.
 
@@ -160,17 +160,17 @@ Como se puede observar el CSS que define las fuentes lo hemos **importado** en `
 
 Nosotros vamos a trabajar con `Sass` y será de una manera similar a la anterior solo que aquí vamos a poder utilizar variables como en cualquier lenguage de programación convencional.
 
+> CSS ya admite variables de forma nativa y es soportado por todas la versiones modernas de navegadores. `--myVariable: valor;`
+
 Más adelante iremos viendo las virtudes y la potencia de utilizar un preprocesador para nuestros estilos pero de momento nos centraremos en definir nuestras variables.
 
-Vamos a crear un archivo llamado `_vars.scss` donde importaremos `_fonts.css` y el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y que será llamado en el **html**.
+Vamos a crear un archivo llamado `_vars.scss` el cual iremos incrementando a lo largo del proyecto, y un archivo principal `styles.scss` que será el que cargue el resto de archivos SCSS y que será llamado en el **html**.
 
 ### SASS
 
 **\_vars.scss**
 
 ```scss
-@import "./_fonts.css";
-
 //Fonts
 $title: "SF Pro Display Regular";
 
@@ -188,7 +188,7 @@ $link: #06c;
 ```scss
 @import "./_normalize.css";
 @import './_fonts.scss';
-@import './vars.scss';
+@import './_vars.scss';
 
 ...
 ```
@@ -212,7 +212,3 @@ Iremos completando cada uno de los bloques, maquetándolos en todas sus formas y
 - [Top Menu](./public/top-menu.md)
 - [Main](./public/main.md)
 - [Footer]()
-
-<br/>
-
-<br/>

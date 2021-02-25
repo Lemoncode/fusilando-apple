@@ -171,8 +171,6 @@ Y por último el código para el top menu.
 **top-menu.scss**
 
 ```scss
-@import "./vars";
-
 .top-menu-container {
 	background-color: $primary;
 	top: 0;
@@ -415,9 +413,7 @@ Y por último el código para el top menu.
 
 ### Analicemos el código.
 
-Lo primero que vemos es el import de las variables, la principal ventaja a la hora de utilizar variables es que si queremos cambiar por ejemplo un color sólo tendríamos que modificar el valor de esa variable y ya quedaría cambiado en todo el proyecto, rápido y sencillo :-) .
-
-> CSS ya adminte variables de forma nativa y es soportado por todas la versiones modernas de navegadores. `--myVariable: valor;`
+La principal ventaja a la hora de utilizar variables es que si queremos cambiar por ejemplo un color sólo tendríamos que modificar el valor de esa variable y ya quedaría cambiado en todo el proyecto, rápido y sencillo :-) .
 
 El anidamiento de clases que nos permite `Sass` nos ahorra tiempo a la hora de dar especificidad a los selectores o clases.
 

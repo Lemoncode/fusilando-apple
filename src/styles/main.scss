@@ -1,0 +1,121 @@
+@import "./_main-devices.scss";
+@import "./_main-collection.scss";
+
+main {
+	width: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+
+	.link {
+		color: $link;
+		text-decoration: none;
+		cursor: pointer;
+	}
+
+	.header-wrapper {
+		font-size: 1.335em;
+		padding: 1.313em 0.938em 0;
+
+		@media (min-width: 720px) {
+			font-size: 2em;
+		}
+
+		@media (min-width: 1020px) {
+			font-size: 2.335em;
+			padding: 0.6em 0.938em 0;
+		}
+	}
+
+	.headline {
+		font-family: $SFProDisplaySemibold;
+		color: $primaryDark;
+		text-align: center;
+		display: block;
+		margin: 0.5em auto 0;
+	}
+
+	.subhead {
+		font-family: $SFProDisplayRegular;
+		font-weight: 400;
+		font-size: 0.9em;
+		line-height: 1.4211;
+		letter-spacing: 0.012em;
+		color: $primaryDark;
+		text-align: center;
+		display: block;
+		width: 100%;
+		margin: 0 auto;
+
+		@media (min-width: 720px) {
+			font-size: 0.75em;
+		}
+	}
+
+	.price {
+		max-width: 250px;
+		margin: 0.5em auto;
+		font-family: $SFProTextRegular;
+		font-size: 0.65em;
+		color: $secondary;
+		text-align: center;
+
+		@media (min-width: 720px) {
+			max-width: none;
+			font-size: 0.545em;
+		}
+		@media (min-width: 1020px) {
+			font-size: 0.445em;
+		}
+
+		a {
+			color: inherit;
+		}
+	}
+
+	.links-container {
+		font-size: 0.9em;
+		font-family: $SFProDisplayRegular;
+		margin-top: 0.7em;
+		text-align: center;
+
+		:first-child {
+			margin-right: 0.5em;
+		}
+
+		::after {
+			font-size: 0.8em;
+			font-family: $SFProDisplaySemibold;
+			content: ">";
+			margin: 0 0.4em;
+		}
+
+		@media (min-width: 720px) {
+			font-size: 0.6em;
+		}
+
+		@media (min-width: 1020px) {
+			font-size: 0.555em;
+		}
+	}
+
+	//online shopping
+	.online-shopping-container {
+		background-color: $primaryLight;
+		color: $primaryDark;
+		width: 100%;
+		margin: 2.7em auto 0;
+
+		.online-shopping-wrapper {
+			padding: 0.9em 0;
+			width: 80%;
+			max-width: 650px;
+			margin: 0 auto;
+			box-sizing: border-box;
+			text-align: center;
+			line-height: 1.47059;
+			letter-spacing: -0.032em;
+			font-family: $SFProTextRegular;
+			font-size: 0.9em;
+		}
+	}
+}

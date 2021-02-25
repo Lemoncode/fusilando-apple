@@ -1,9 +1,8 @@
 @import "./_normalize.css";
-@import "./vars";
 @import "./fonts";
+@import "./vars";
 @import "./top-menu.scss";
-@import "./main-devices.scss";
-@import "./main-collection.scss";
+@import "./main.scss";
 
 html {
 	min-width: 20em;
