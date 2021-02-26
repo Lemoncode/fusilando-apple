@@ -185,4 +185,4 @@ El primer bloque es un pequeño texto con un enlace de `Compra online`. No es m�
 
 [6.2.2 Sección dispositivos (iPhone, iPhone Pro y iPad).](main-devices.md)
 
-[6.2.3 Sección collection).](main-collection.md)
+[6.2.3 Sección collection.](main-collection.md)
