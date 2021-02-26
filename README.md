@@ -15,7 +15,7 @@ Los pasos que vamos a seguir son:
 
 ---
 
-En esta parte no vamos a pararnos mucho, es algo que se verá más adelante, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
+En esta parte no vamos a pararnos mucho, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
 Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo y también incluye todo lo necesario para poder utilizar `Sass`.
 
 ## 2. Creación de la estructura.
@@ -70,15 +70,27 @@ Estructura básica inicial:
 	<nav class="container">Hello top menu</nav>
 	<main>
 		<div class="container">Hello container</div>
-		<section class="container">Hello section iPhone 12</section>
-		<section class="container">Hello section iPhone 12 pro</section>
-		<section class="container">Hello section iPad Air</section>
-		<section class="container">Hello section watch and more</section>
-		<section class="container">Hello section watch and more</section>
+		<section class="devices">
+			Hello devices
+			<div>Hello iPhone 12</div>
+			<div>Hello iPhone Pro</div>
+			<div>Hello iPad</div>
+		</section>
+		<section class="collection">
+			Hello section collection
+			<div>Hello watch</div>
+			<div>Hello One</div>
+			<div>Hello watch2</div>
+			<div>Hello AirPods</div>
+			<div>Hello Tv</div>
+			<div>Hello MacBook</div>
+		</section>
 	</main>
 	<footer class="container">Hello footer</footer>
 </body>
 ```
+
+![estructura básica](public/basic-structure.png)
 
 ## 5. Creación de estilos globales
 
@@ -134,8 +146,6 @@ Quedaría algo así:
 **\_global.css**
 
 ```css
-@import './_fonts.css';
-
 .title {
       font-family: 'SF Pro Display Regular',
       color: #000,
@@ -156,8 +166,6 @@ Quedaría algo así:
 ...
 ```
 
-Como se puede observar el CSS que define las fuentes lo hemos **importado** en `_global.css` para poder utilizarlo. Esto es algo que iremos viendo y repitiendo durante el ejercicio con los distintos estilos de cada bloque, de esta manera sólo necesitaremos añadir a nuestro **html** un único archivo.
-
 Nosotros vamos a trabajar con `Sass` y será de una manera similar a la anterior solo que aquí vamos a poder utilizar variables como en cualquier lenguage de programación convencional.
 
 > CSS ya admite variables de forma nativa y es soportado por todas la versiones modernas de navegadores. `--myVariable: valor;`
@@ -171,16 +179,24 @@ Vamos a crear un archivo llamado `_vars.scss` el cual iremos incrementando a lo 
 **\_vars.scss**
 
 ```scss
-//Fonts
-$title: "SF Pro Display Regular";
-
 //colors
-$primary: rgba(0, 0, 0, 0.92);
+$backgroundTopMenu: rgba(0, 0, 0, 0.92);
 $primaryLight: #f5f5f7;
+$backgroundLight: #fbfbfd;
 $primaryDark: #1d1d1f;
 $secondary: #86868b;
 $secondaryDark: #515154;
 $link: #06c;
+$linkLight: #2997ff;
+$offer: #bf4800;
+$dark: #000;
+$light: #fff;
+
+//fonts
+$SFProTextRegular: "SF Pro Text Regular", "Helvetica", "Arial", sans-serif;
+$SFProDisplaySemibold: "SF Pro Display Semibold", "Helvetica", "Arial",
+	sans-serif;
+$SFProDisplayRegular: "SF Pro Display Regular", "Helvetica", "Arial", sans-serif;
 ```
 
 **styles.scss**

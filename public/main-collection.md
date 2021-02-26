@@ -1,3 +1,135 @@
+## 6.2 Main
+
+---
+
+[6.2.1 Texto compra online](main.md)
+
+[6.2.2 Sección dispositivos (iPhone, iPhone Pro y iPad)](main-devices.md)
+
+---
+
+### 6.2.3 Sección Collection.
+
+Esta sección tiene un estructura similar a la anterior pero como veremos en el CSS la distribución cambia.
+
+**index.html**
+
+```html
+<section class="collection-container">
+			<div class="content watch">
+				<div class="header-collection-wrapper">
+					<h4 class="headline-image">
+						<span class="visuallyhidden">Apple Watch Series 6</span>
+					</h4>
+					<h5 class="subhead" role="presentation">
+						Presentamos la Black Unity Collection.
+					</h5>
+
+					<div class="links-container">
+						<a class="link" href="#"
+							aria-label="Más información sobre el Apple Watch Series 6 Black Unity">Más información</a>
+						<a class="link" href="#" aria-label="Comprar Apple Watch Series 6 Black Unity">Comprar</a>
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-watch"></figure>
+				</div>
+			</div>
+			<div class="content one">
+				<div class="header-collection-wrapper">
+					<h4 class="headline-image">
+						<span class="visuallyhidden">Apple One</span>
+					</h4>
+					<h5 class="subhead" role="presentation">
+						Disfruta de cuatro servicios de Apple en una sola
+						suscripción. Te llevarás más por menos.
+					</h5>
+					<div class="links-container">
+						<a class="link" href="#" aria-label="Más información sobre Apple One">Más información</a>
+						<a class="link" href="#" aria-label="Prueba Apple One gratis">Pruébalo gratis</a>
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-one"></figure>
+				</div>
+			</div>
+			<div class="content watch2">
+				<div class="header-collection-wrapper">
+					<p class="offert">
+						Oferta disponible por tiempo limitado
+					</p>
+					<h4 class="headline">Diseñado con tu corazón en mente.</h4>
+					<h5 class="subhead" role="presentation">
+						En febrero, llévate un Apple Watch por menos con los
+						descuentos por renovación. Compra un Apple Watch
+						Series 6 desde 259 €
+						o un Apple Watch SE
+						desde 229 €.
+					</h5>
+
+					<div class="links-container">
+						<a class="link" aria-label="Ver oferta de febrero para el Apple Watch" href="#">Comprar</a>
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-watch2"></figure>
+				</div>
+			</div>
+			<div class="content airpods">
+				<div class="header-collection-wrapper">
+					<h4 class="headline">AirPods Max</h4>
+					<div class="links-container">
+						<a class="link" href="#" aria-label="Más información sobre los AirPods Max">Más información</a>
+						<a class="link" href="#" aria-label="Comprar AirPods Max">Comprar</a>
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-airpods"></figure>
+				</div>
+			</div>
+			<div class="content tv">
+				<div class="header-collection-wrapper">
+					<h4 class="headline-image">
+						<span class="visuallyhidden">Apple TV plus</span>
+					</h4>
+
+					<div class="play">
+						<h5 class="visuallyhidden">
+							Nueva Serie, El Show de Snoopy
+						</h5>
+
+						<span class="" href="#""
+									aria-label=" Estreno de un Apple Original. Disfruta de «El Show de Snoopy» en la app Apple TV.">Ver
+							ahora</span>
+						<figure class="play-icon"></figure>
+
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-tv"></figure>
+				</div>
+			</div>
+			<div class="content macbook">
+				<div class="header-collection-wrapper">
+					<h4 class="headline">MacBook Air</h4>
+					<h5 class="subhead" role="presentation">
+						El poder no ocupa lugar.
+					</h5>
+					<div class="links-container">
+						<a class="link" href="#" aria-label="Más información sobre el MacBook Air">Más información</a>
+						<a class="link" href="#" aria-label="Comprar MacBook Air">Comprar</a>
+					</div>
+				</div>
+				<div class="img-container">
+					<figure class="image-macbook"></figure>
+				</div>
+			</div>
+		</section>
+```
+
+**\_main-collection.scss**
+
+```scss
 main {
 	.collection-container {
 		display: grid;
@@ -180,9 +312,7 @@ main {
 
 				@media (min-width: 720px) {
 					background-image: url(../assets/tile_medium.jpg);
-					width: 316px;
-					height: 290px;
-					background-size: 316px 290px;
+					top: -10%;
 				}
 				@media (min-width: 1020px) {
 					background-image: url(../assets/tile_large.jpg);
@@ -341,3 +471,16 @@ main {
 		}
 	}
 }
+```
+
+Prácticamente lo mismo que en la anterior sección. Aquí la imágen discordante es la de `One`. Particularidades de esta sección es que algunos bloques incluyen una imagen en la cabecera que es utilizada de la misma manera, estas incluyen una etiqueta `span` que se oculta y es utilizada para accesibilidad.
+
+La distribución cambia a partir de la vista para tablets, pasando de una a dos columnas y por ello utilizamos un grid en el contenedor padre. Con la propiedad `grid-template-columns` definimos las columnas y el espacio que ocupan.
+
+---
+
+[6.2.1 Texto compra online](main.md)
+
+[6.2.2 Sección dispositivos (iPhone, iPhone Pro y iPad)](main-devices.md)
+
+---

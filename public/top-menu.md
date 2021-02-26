@@ -45,7 +45,6 @@ La estructura **html** queda de la siguiente forma:
 					<span class="menu-line-two">
 						<span></span>
 					</span>
-					<span class="link-text">Mostrar y Ocultar menú</span>
 				</li>
 				<li class="item-menu item-apple">
 					<a href="#" class="link-icon"><span class="link-text">Apple</span></a>
@@ -147,32 +146,13 @@ Esta nueva hoja de estilos tenemos que importarla en la principal ya que es la q
 
 > _Podemos ver que en los imports hay archivos sin extensión, no siempre es necesario añadirla, aquí aparece así por el formateo que Prettier (extensión para VSCode) le da, para evitar dolores de cabeza si no tienes claro si es necesario ponerla opta por añadirla_.
 
-En `_vars.scss` hemos añadido una nueva variable que es un estilo de fuente
-
-**\_vars.scss**
-
-```scss
-//colors
-$primary: rgba(0, 0, 0, 0.92);
-$primaryLight: #f5f5f7;
-$primaryDark: #1d1d1f;
-$secondary: #86868b;
-$secondaryDark: #515154;
-$link: #06c;
-$dark: #000;
-$light: #fff;
-
-//fonts
-$SFProTextRegular: "SF Pro Text Regular", "Helvetica", "Arial", sans-serif;
-```
-
-Y por último el código para el top menu.
+El código para el top menu.
 
 **top-menu.scss**
 
 ```scss
 .top-menu-container {
-	background-color: $primary;
+	background-color: $backgroundTopMenu;
 	top: 0;
 	max-height: 3.125em;
 	overflow: hidden;
@@ -417,11 +397,11 @@ La principal ventaja a la hora de utilizar variables es que si queremos cambiar 
 
 El anidamiento de clases que nos permite `Sass` nos ahorra tiempo a la hora de dar especificidad a los selectores o clases.
 
-La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;`, en una sóla línea `flex-flow: rows;`. Utilizamos un `grid` por que el orden de los elementos cambia de una vista a otra y así podremos moverlos. En el html los items están puestos en el orden de la vista para pantallas grandes, por eso podemos cambiar el display a flex y todo queda en su sitio solo tenemos que ocultar los campos que no queremos mostrar.
+La lista de ítems está distribuida en un `grid` para la vista en dispositivos móviles y para el resto de tamaños cambiamos la propiedad a `display: flex;` en una sóla línea `flex-flow: rows;`. Utilizamos un `grid` por que el orden de los elementos cambia de una vista a otra y así podremos moverlos. En el html los items están puestos en el orden de la vista para pantallas grandes, por eso podemos cambiar el display a flex y todo queda en su sitio, solo tenemos que ocultar los campos que no queremos mostrar.
 
 Para los saltos de tamaños de pantalla utilizamos los media query `@media`.
 
-_Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador._
+**_Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador._**
 
 La colocación, márgenes, espaciados entre elementos, tamaños, etc... son valores de las propiedas que vamos añadiendo y que tendremos que ir probando hasta ajustar nuestro desarrollo lo más fielmente posible al diseño. Para esto vamos a utilizar valores relativos `em`, `rem` y `%` evitando siempre que sea posible el uso de valores absolutos en `px`.
 
@@ -467,7 +447,7 @@ Si cambiamos en `<p>` su valor a `1rem` su `font-size` en pixels pasaría a ser 
 
 Siempre habrá pequeñas variaciones respecto al diseño original, sobre todo en los textos ya que no es lo mismo ajustar un texto en Photoshop o Illustrator que mediante código. La flexibilidad que nos dan estos programas no la tenemos en CSS, por eso es conveniente que tanto diseñador como programador conozcan un poco el trabajo de ambas partes. Conseguir el "pixel perfect" no solo va ha depender de lo buen maquetador que seas, un buen diseño con perspectiva es fundamental, por que nada es imposible pero sí poco rentable por muy bonito que sea ;-) .
 
-Los iconos están añadidos mediante CSS con la propiedad `background-image`, también se podrían haber añadido como elemento `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida y la posibilidad de cambiar ciertas propiedades como el color mediante código si lo incluimos como etiqueta html.
+Los iconos están añadidos mediante CSS con la propiedad `background-image`, también se podrían haber añadido como elemento `<image>` en el html. Hemos utilizado el formato `.svg`, este formato nos brinda la ventaja de escalado sin pérdida y la posibilidad de cambiar ciertas propiedades como el color mediante código.
 
 > _Toda imagen basada en mapa de bits (píxeles) sufre pérdida de calidad y definición al ser escalada. Esto es mucho más evidente cuando el escalado es de ampliación._
 
