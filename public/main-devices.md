@@ -2,7 +2,7 @@
 
 ---
 
-[6.2.1 Texto compra online](main.md)
+[6.2 Main](main.md)
 
 [6.2.3 Sección Collection](main-collection.md)
 
@@ -229,7 +229,7 @@ Con este planteamiento las imágenes no escalan, simplemente van cambiando en ca
 
 ---
 
-[6.2.1 Texto compra online](main.md)
+[6.2 Main](main.md)
 
 [6.2.3 Sección Collection](main-collection.md)
 

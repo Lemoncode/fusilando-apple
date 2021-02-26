@@ -2,7 +2,7 @@
 
 ---
 
-[6.2.1 Texto compra online](main.md)
+[6.2 Main](main.md)
 
 [6.2.2 Sección dispositivos (iPhone, iPhone Pro y iPad)](main-devices.md)
 
@@ -479,7 +479,7 @@ La distribución cambia a partir de la vista para tablets, pasando de una a dos 
 
 ---
 
-[6.2.1 Texto compra online](main.md)
+[6.2 Main](main.md)
 
 [6.2.2 Sección dispositivos (iPhone, iPhone Pro y iPad)](main-devices.md)
 
