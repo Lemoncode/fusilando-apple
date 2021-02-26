@@ -454,3 +454,11 @@ Los iconos están añadidos mediante CSS con la propiedad `background-image`, ta
 > _Las imágenes vectoriales están formadas por vectores. Un vector es un objeto geométrico definido mediante cálculos matemáticos, esta es la razón por la que este tipo de imágenes no tiene pérdidas de calidad al ser escaladas. Una fuente o tipografía es un ejemplo claro de imágen vectorial._
 
 Los comentarios en el código nos ayudan en su mantenimiento. Al final del documento vemos uno y seguido una serie de clases. Como indicamos, estas clases son las que utilizamos de manera dinámica para mostrar el menú. Están añadidas al final de manera premeditada, de esta forma es más fácil evitar conflictos y sobreescribir propiedades.
+
+---
+
+[Readme](../README.md)
+
+[6.2 Main](main.md)
+
+---
