@@ -4,8 +4,7 @@
 	"description": "Examples use css",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "parcel ./src/index.html"
+		"start": "rimraf dist && parcel ./src/index.html"
 	},
 	"repository": {
 		"type": "git",
@@ -19,6 +18,7 @@
 	"homepage": "https://github.com/Lemoncode/fusilando-apple#readme",
 	"devDependencies": {
 		"parcel": "^1.12.4",
+		"rimraf": "^3.0.2",
 		"sass": "^1.32.8"
 	}
 }

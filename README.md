@@ -16,7 +16,7 @@ Los pasos que vamos a seguir son:
 ---
 
 En esta parte no vamos a pararnos mucho, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
-Hemos instalado `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo y también incluye todo lo necesario para poder utilizar `Sass`.
+Hemos instalado `Sass`, `rimraf` y `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo y también incluye todo lo necesario para poder utilizar `Sass`.
 
 ## 2. Creación de la estructura.
 
