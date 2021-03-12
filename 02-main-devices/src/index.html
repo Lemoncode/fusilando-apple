@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fusilando Apple</title>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="./styles/styles.scss" />
+	</head>
+
+	<body>
+		<nav class="container top-menu-container">
+			<ul class="top-menu">
+				<li id="toggle-button" class="item-menu item-open-menu">
+					<span class="menu-line-one">
+						<span></span>
+					</span>
+					<span class="menu-line-two">
+						<span></span>
+					</span>
+				</li>
+				<li class="item-menu item-apple">
+					<a href="#" class="link-icon"><span class="link-text">Apple</span></a>
+				</li>
+				<li class="item-menu item-mac">Mac</li>
+				<li class="item-menu item-ipad">IPad</li>
+				<li class="item-menu item-iphone">IPhone</li>
+				<li class="item-menu item-watch">Watch</li>
+				<li class="item-menu item-tv">TV</li>
+				<li class="item-menu item-music">Music</li>
+				<li class="item-menu item-support">Soporte</li>
+				<li class="item-menu item-search">
+					<a href="#" class="link-icon">
+						<span class="link-text">Buscar</span>
+					</a>
+					<div class="input-container">
+						<a href="#" class="link-icon-movile">
+							<span class="link-text">Buscar</span>
+						</a>
+						<input
+							type="search"
+							class="input-search"
+							placeholder="Buscar en apple.com"
+						/>
+					</div>
+				</li>
+				<li class="item-menu item-store icon-store">
+					<a href="#" class="link-icon"
+						><span class="link-text">Tienda</span></a
+					>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			<div class="online-shopping-container">
+				<p class="online-shopping-wrapper">
+					<a href="#" class="link">Compra online</a> con la ayuda de un
+					Especialista y disfruta de envío gratuito sin contacto físico.
+				</p>
+			</div>
+			<section class="devices-container">
+				<div class="content iphone-12">
+					<div class="header-wrapper">
+						<h2 class="headline">iPhone 12</h2>
+						<h3 class="subhead" role="presentation">
+							Más allá de la velocidad.
+						</h3>
+						<p class="price">
+							<span
+								aria-label="Desde 33,71 €/mes o desde 809 € sin renovación"
+								role="text"
+								>Desde 33,71 €/mes o desde 809 € sin renovación.</span
+							><sup><a href="#" class="link">1</a></sup>
+						</p>
+						<div class="links-container">
+							<a
+								class="link"
+								href="#"
+								aria-label="Más información sobre el iPhone 12"
+								>Más información</a
+							>
+							<a class="link" href="#" aria-label="Comprar un iPhone 12"
+								>Comprar</a
+							>
+						</div>
+					</div>
+					<div class="img-container">
+						<figure class="image-iphone-12"></figure>
+					</div>
+				</div>
+				<div class="content iphone-pro">
+					<div class="header-wrapper">
+						<h2 class="headline">iPhone 12 Pro</h2>
+						<h3 class="subhead" role="presentation">Un salto al mañana.</h3>
+						<p class="price">
+							<span
+								aria-label="Desde 48,29 €/mes o desde 1.159 € sin renovación"
+								role="text"
+								>Desde 48,29 €/mes o desde 1.159 € sin renovación.</span
+							><sup><a href="#" class="link">2</a></sup>
+						</p>
+						<div class="links-container">
+							<a
+								class="link"
+								href="#"
+								aria-label="Más información sobre el iPhone 12 Pro"
+								>Más información</a
+							>
+							<a class="link" href="#" aria-label="Comprar un iPhone 12 Pro"
+								>Comprar</a
+							>
+						</div>
+					</div>
+					<div class="img-container">
+						<figure class="image-iphone-pro"></figure>
+					</div>
+				</div>
+				<div class="content ipad">
+					<div class="header-wrapper">
+						<h2 class="headline">iPad Air</h2>
+						<h3 class="subhead" role="presentation">
+							El color. La potencia. La maravilla.
+						</h3>
+						<div class="links-container">
+							<a
+								class="link"
+								href="#"
+								aria-label="Más información sobre el iPad Air"
+								>Más información</a
+							>
+							<a class="link" href="#" aria-label="Comprar iPad Air">Comprar</a>
+						</div>
+					</div>
+					<div class="img-container">
+						<figure class="image-ipad"></figure>
+					</div>
+				</div>
+			</section>
+			<section class="collection">
+				Hello section collection
+				<div>Hello watch</div>
+				<div>Hello One</div>
+				<div>Hello watch2</div>
+				<div>Hello AirPods</div>
+				<div>Hello Tv</div>
+				<div>Hello MacBook</div>
+			</section>
+		</main>
+		<footer class="container">Hello footer</footer>
+		<script>
+			document.querySelector("#toggle-button").addEventListener("click", () => {
+				document
+					.querySelector("#toggle-button")
+					.classList.toggle("item-close-menu");
+				document
+					.querySelector(".top-menu-container")
+					.classList.toggle("collapsed");
+				document
+					.querySelector(".menu-line-one")
+					.classList.toggle("menu-line-one-close");
+				document
+					.querySelector(".menu-line-two")
+					.classList.toggle("menu-line-two-close");
+				document
+					.querySelector(".icon-store")
+					.classList.toggle("icon-store-visibility");
+			});
+		</script>
+	</body>
+</html>

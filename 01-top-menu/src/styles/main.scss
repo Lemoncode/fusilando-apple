@@ -1,0 +1,22 @@
+@import "./_main-devices.scss";
+@import "./_main-collection.scss";
+
+main {
+	border: 1px solid black;
+	display: block;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 2%;
+	margin: 0 auto;
+	background-color: cadetblue;
+
+	.online-shop {
+		border: 1px solid black;
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 2%;
+		margin: 0 auto;
+		background-color: deeppink;
+	}
+}

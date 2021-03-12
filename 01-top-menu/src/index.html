@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fusilando Apple</title>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="./styles/styles.scss" />
+	</head>
+
+	<body>
+		<nav class="container top-menu-container">
+			<ul class="top-menu">
+				<li id="toggle-button" class="item-menu item-open-menu">
+					<span class="menu-line-one">
+						<span></span>
+					</span>
+					<span class="menu-line-two">
+						<span></span>
+					</span>
+				</li>
+				<li class="item-menu item-apple">
+					<a href="#" class="link-icon"><span class="link-text">Apple</span></a>
+				</li>
+				<li class="item-menu item-mac">Mac</li>
+				<li class="item-menu item-ipad">IPad</li>
+				<li class="item-menu item-iphone">IPhone</li>
+				<li class="item-menu item-watch">Watch</li>
+				<li class="item-menu item-tv">TV</li>
+				<li class="item-menu item-music">Music</li>
+				<li class="item-menu item-support">Soporte</li>
+				<li class="item-menu item-search">
+					<a href="#" class="link-icon">
+						<span class="link-text">Buscar</span>
+					</a>
+					<div class="input-container">
+						<a href="#" class="link-icon-movile">
+							<span class="link-text">Buscar</span>
+						</a>
+						<input
+							type="search"
+							class="input-search"
+							placeholder="Buscar en apple.com"
+						/>
+					</div>
+				</li>
+				<li class="item-menu item-store icon-store">
+					<a href="#" class="link-icon"
+						><span class="link-text">Tienda</span></a
+					>
+				</li>
+			</ul>
+		</nav>
+		<main>
+			Hello main
+			<div class="online-shop">Hello online-shop</div>
+			<section class="devices">
+				Hello devices
+				<div>Hello iPhone 12</div>
+				<div>Hello iPhone Pro</div>
+				<div>Hello iPad</div>
+			</section>
+			<section class="collection">
+				Hello section collection
+				<div>Hello watch</div>
+				<div>Hello One</div>
+				<div>Hello watch2</div>
+				<div>Hello AirPods</div>
+				<div>Hello Tv</div>
+				<div>Hello MacBook</div>
+			</section>
+		</main>
+		<footer class="container">Hello footer</footer>
+		<script>
+			document.querySelector("#toggle-button").addEventListener("click", () => {
+				document
+					.querySelector("#toggle-button")
+					.classList.toggle("item-close-menu");
+				document
+					.querySelector(".top-menu-container")
+					.classList.toggle("collapsed");
+				document
+					.querySelector(".menu-line-one")
+					.classList.toggle("menu-line-one-close");
+				document
+					.querySelector(".menu-line-two")
+					.classList.toggle("menu-line-two-close");
+				document
+					.querySelector(".icon-store")
+					.classList.toggle("icon-store-visibility");
+			});
+		</script>
+	</body>
+</html>

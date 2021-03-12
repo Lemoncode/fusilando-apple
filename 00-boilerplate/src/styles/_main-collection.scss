@@ -1,0 +1,18 @@
+main {
+	.collection {
+		border: 1px solid black;
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 2%;
+		margin: 0 auto;
+		background-color: deeppink;
+
+		div {
+			border: 1px solid black;
+			padding: 1%;
+			margin: 1% auto;
+			background-color: lavenderblush;
+		}
+	}
+}

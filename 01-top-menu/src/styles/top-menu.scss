@@ -1,0 +1,239 @@
+.top-menu-container {
+	background-color: $backgroundTopMenu;
+	top: 0;
+	max-height: 3.125em;
+	overflow: hidden;
+	box-sizing: border-box;
+	transition: max-height 0.5s ease-out;
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
+.top-menu {
+	list-style: none;
+	color: rgba($primaryLight, 0.9);
+	font-family: $SFProTextRegular, Helvetica, Arial, sans-serif;
+	padding: 0.8em 0.5em;
+	margin: -0.625em 0 0 0;
+	display: grid;
+	cursor: pointer;
+	grid-template-areas:
+		"menu apple store"
+		"search search search"
+		"item1 item1 item1"
+		"item2 item2 item2"
+		"item3 item3 item3"
+		"item4 item4 item4"
+		"item5 item5 item5"
+		"item6 item6 item6"
+		"item7 item7 item7";
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 0.5fr 1fr repeat(7, 0.5fr);
+	row-gap: 0.5em;
+
+	.item-menu {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		padding: 0.625em 0;
+		align-self: center;
+		opacity: 0.8;
+
+		&:hover {
+			opacity: 1;
+		}
+
+		.link-text {
+			position: absolute;
+			visibility: hidden;
+		}
+		.link-icon {
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			height: 1.313em;
+			width: 1.313em;
+			margin: 0 auto;
+			display: block;
+			opacity: 0.8;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.item-open-menu {
+		grid-area: menu;
+		display: flex;
+		align-self: center;
+		flex-flow: column;
+		opacity: 0.7;
+		cursor: pointer;
+		gap: 0.4em;
+
+		.menu-line-one {
+			height: 0.125em;
+			width: 1.063em;
+			border-radius: 0.031em;
+			display: block;
+			background-color: $primaryLight;
+		}
+		.menu-line-two {
+			height: 0.075em;
+			width: 1.063em;
+			border-radius: 0.031em;
+			display: block;
+			background-color: $primaryLight;
+		}
+	}
+	.item-apple {
+		grid-area: apple;
+		.link-icon {
+			background-image: url(../assets/icons/logo-apple.svg);
+		}
+	}
+
+	.item-mac {
+		grid-area: item1;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-ipad {
+		grid-area: item2;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-iphone {
+		grid-area: item3;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-watch {
+		grid-area: item4;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-tv {
+		grid-area: item5;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-music {
+		grid-area: item6;
+		border-bottom: 2px solid $secondaryDark;
+	}
+	.item-support {
+		grid-area: item7;
+	}
+	.item-search {
+		grid-area: search;
+		border-bottom: 1px solid $secondaryDark;
+		width: 100%;
+		padding: 0.313em 0 0.938em;
+
+		.link-icon {
+			display: none;
+		}
+
+		.input-container {
+			background-color: $primaryDark;
+			width: 93%;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+			flex-flow: row;
+			gap: 0.7em;
+			padding: 0.6em;
+			border-radius: 0.375em;
+
+			.link-icon-movile {
+				background-image: url(../assets/icons/search.svg);
+				width: 3%;
+				height: 0.875em;
+				width: 0.875em;
+				align-self: center;
+			}
+			.input-search {
+				width: 93%;
+				background-color: $primaryDark;
+				border: none;
+				outline: none;
+				color: rgba($primaryLight, 0.7);
+				font-size: 1.063em;
+				line-height: 1.23536;
+				letter-spacing: -0.022em;
+			}
+		}
+	}
+
+	.item-store {
+		grid-area: store;
+		display: flex;
+		.link-icon {
+			background-image: url(../assets/icons/bag.svg);
+			margin-right: 0;
+		}
+	}
+
+	// media query
+	@media (min-width: 760px) {
+		display: flex;
+		flex-flow: row;
+		margin: 0 auto;
+		padding: 0.75em 0;
+		max-width: 66.875em;
+		justify-content: space-around;
+		align-content: center;
+
+		.item-menu {
+			width: auto;
+			padding: 0;
+			border: none;
+			font-size: 0.875em;
+			margin: 0;
+
+			.link-icon {
+				margin: 0;
+			}
+		}
+
+		.item-search {
+			.link-icon {
+				background-image: url(../assets/icons/search.svg);
+				display: block;
+				opacity: 1;
+			}
+			.input-container {
+				display: none;
+			}
+		}
+
+		#toggle-button,
+		.input-search {
+			display: none;
+		}
+	}
+}
+
+//Collapsed menu styles
+
+.collapsed {
+	background-color: $dark;
+	padding-bottom: 100vh;
+	max-height: 100vh;
+	transition: all 0.5s ease-in;
+}
+.item-close-menu {
+	gap: 0;
+}
+.menu-line-one-close {
+	opacity: 0.8;
+	transform: rotate(45deg);
+}
+.menu-line-two-close {
+	opacity: 0.8;
+	height: 0.125em !important;
+	margin-top: -0.52em;
+	transform: rotate(-45deg);
+}
+.icon-store-visibility {
+	visibility: hidden;
+}
