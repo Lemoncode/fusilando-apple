@@ -1310,3 +1310,9 @@ Los iconos están añadidos mediante CSS con la propiedad `background-image`, ta
 +	}
 
 ```
+
+### Documentación por partes
+
+- [00 Boilerplate](../00-boilerplate/readme.md)
+- [Top menu](../01-top-menu/readme.md)
+- [Main devices](../02-main-devices/readme.md)

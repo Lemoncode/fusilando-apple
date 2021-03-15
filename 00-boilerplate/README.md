@@ -5,6 +5,17 @@
 En esta parte no vamos a pararnos mucho, pero sí quería dejar claro lo que vamos a estar utilizando en este ejemplo.
 Hemos instalado `Sass`, `rimraf` y `Parcel` que no es más que un servidor local de desarrollo que nos ayudará a ser más ágiles en nuestro trabajo y también incluye todo lo necesario para poder utilizar `Sass`.
 
+- Iniciamos el proyecto:
+  `npm init -y`
+- Instalamos las dependencias:
+  `npm install parcel@1.12.3 sass rimraf --save-dev`
+- Añadimos el script para arrancar el proyecto en **package.json**
+  ```json
+  "scripts": {
+  	"start": "rimraf dist && parcel ./src/index.html"
+  }
+  ```
+
 ## 2. Creación de la estructura.
 
 ---
@@ -279,6 +290,6 @@ Iremos completando cada uno de los bloques, maquetándolos en todas sus formas y
 
 ### Documentación por partes
 
-- [Top Menu](./public/top-menu.md)
-- [Main](./public/main.md)
-- [Footer]()
+- [Top Menu](../01-top-menu/readme.md)
+- [Main devices](../02-main-diveces/readme.md)
+- [Main collection](../03-main-collection/readme.md)

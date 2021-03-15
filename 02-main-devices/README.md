@@ -896,3 +896,9 @@ Analizando las imágenes pude comprobar que no tenían el mismo tamaño y eso me
 El ejemplo lo podemos ver en la imagen del ipad donde se ha tenido que definir un nuevo tamaño. También aquí podemos ver cómo cambia el orden de los elementos según la vista.
 
 Con este planteamiento las imágenes no escalan, simplemente van cambiando en cada punto de ruptura mediante los media queries.
+
+### Documentación por partes
+
+- [00 Boilerplate](../00-boilerplate/readme.md)
+- [Top menu](../01-top-menu/readme.md)
+- [Main collection](../03-main-collection/readme.md)

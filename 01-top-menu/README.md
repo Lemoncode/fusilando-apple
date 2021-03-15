@@ -675,3 +675,9 @@ La lista de ítems está distribuida en un `grid` para la vista en dispositivos 
 Para los saltos de tamaños de pantalla utilizamos los media query `@media`.
 
 **_Cuando utilizamos el buscador se debería mostrar otro desplegable, esto no está implementado por no añadir más `javaScript` y meter ruido innecesario. Un planteamiento sería añadir una nueva capa la cual mostrar u ocultar al utilizar el buscador._**
+
+### Documentación por partes
+
+- [00 Boilerplate](../00-boilerplate/readme.md)
+- [Main devices](../02-main-devices/readme.md)
+- [Main collection](../03-main-collection/readme.md)
